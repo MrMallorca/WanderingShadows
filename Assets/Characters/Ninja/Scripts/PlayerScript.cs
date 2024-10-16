@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 
@@ -12,7 +13,10 @@ public class PlayerScript : MonoBehaviour
     float speed = 4.0f;
 
     [SerializeField] InputActionReference jump;
-    private float jumpForce = 6f;
+    [SerializeField] InputActionReference ability;
+
+    float dashForce = 3f;
+    float jumpForce = 6f;
     bool isOnGround;
 
     int vidas = 2;
@@ -27,6 +31,8 @@ public class PlayerScript : MonoBehaviour
     bool startGame = false;
     float knockbackDuration = 0.2f;
 
+    GameObject obstacle;
+
     Animator anim;
     // Start is called before the first frame update
 
@@ -34,12 +40,18 @@ public class PlayerScript : MonoBehaviour
     {
         jump.action.Enable();
 
+        ability.action.Enable();
+
+        ability.action.performed += OnAbility;
+        ability.action.canceled += OnAbility;
+
         jump.action.performed += OnJump;
         jump.action.canceled += OnJump;
     }
 
     void Start()
     {
+        obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         isDead = false;
@@ -49,16 +61,18 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isInvunerable && startGame == true )
+        if (startGame == true )
         {
-            if(isDead == false)
+            if(!isInvunerable && isDead == false )
             {
+                anim.SetBool("startGame", false);
+
                 Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime;
                 rb.MovePosition(rb.position + movement);
             }
             
         }
-        if(vidas == 0) 
+        if(vidas == 0 && isDead == false) 
         {
             isDead = true;
             anim.SetTrigger("isDead");
@@ -72,6 +86,11 @@ public class PlayerScript : MonoBehaviour
 
         jump.action.performed -= OnJump;
         jump.action.canceled -= OnJump;
+
+        ability.action.performed -= OnAbility;
+        ability.action.canceled -= OnAbility;
+
+        ability.action.Disable();
 
         jump.action.Disable();
     }
@@ -87,7 +106,16 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
+    void OnAbility(InputAction.CallbackContext ctx)
+    {
+        if(!isDead && GameObject.FindGameObjectWithTag("Ninja")) 
+        {
+            Debug.Log("llego");
+            rb.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
 
+        }
+            
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -108,10 +136,13 @@ public class PlayerScript : MonoBehaviour
 
     IEnumerator  KnockBack()
     {
-        isInvunerable = true;
+
         StartCoroutine(Hitted());
-        Vector2 knockBackDirection = new Vector2(transform.position.y + 3, 0);
-        rb.velocity = new Vector2(knockBackDirection.x, knockBackUp) * knockBackForce;
+
+
+        //Vector2 knockBackDirection = new Vector2(transform.position.y + 3, 0);
+        //rb.velocity = new Vector2(knockBackDirection.x, knockBackUp) * knockBackForce;
+
 
         yield return new WaitForSeconds(knockbackDuration);
 
@@ -129,9 +160,15 @@ public class PlayerScript : MonoBehaviour
 
     IEnumerator Hitted()
     {
+        isInvunerable = true;
         anim.SetBool("Hitted", true);
-        yield return new WaitForSeconds(2);
+
+        Physics.IgnoreCollision(obstacle.GetComponent<Collider>(), GetComponent<Collider>());
+
+        yield return new WaitForSeconds(4);
         anim.SetBool("Hitted", false);
+        Physics.IgnoreCollision(obstacle.GetComponent<Collider>(), GetComponent<Collider>(),false);
+
 
     }
 

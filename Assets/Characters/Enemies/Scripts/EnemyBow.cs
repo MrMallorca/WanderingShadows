@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBow : MonoBehaviour
 {
     Vector3 offset;
-    float arrowForce = 50f;
+    float arrowForce = 500f;
 
     public GameObject arrowPrefab;
     Animator anim;
@@ -28,7 +28,10 @@ public class EnemyBow : MonoBehaviour
     {
         GameObject arrow = Instantiate(arrowPrefab, transform.position + offset, transform.rotation);
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * arrowForce, ForceMode.Impulse);
-        anim.SetBool("isShooting", false);
+        rb.AddForce(transform.forward * arrowForce);
+        Destroy(arrow,2f);
+
     }
+
+  
 }

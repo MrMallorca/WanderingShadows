@@ -123,7 +123,8 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("isJumping", false);
             isOnGround = true;
         }
-        else if(collision.gameObject.CompareTag("Obstacle"))
+        else if(collision.gameObject.CompareTag("Obstacle") 
+            || collision.gameObject.CompareTag("Damageable"))
         {
 
             StartCoroutine(KnockBack());
@@ -163,12 +164,11 @@ public class PlayerScript : MonoBehaviour
         isInvunerable = true;
         anim.SetBool("Hitted", true);
 
-        Physics.IgnoreCollision(obstacle.GetComponent<Collider>(), GetComponent<Collider>());
+        Physics.IgnoreLayerCollision(6, 7, true);
 
         yield return new WaitForSeconds(4);
         anim.SetBool("Hitted", false);
-        Physics.IgnoreCollision(obstacle.GetComponent<Collider>(), GetComponent<Collider>(),false);
-
+        Physics.IgnoreLayerCollision(6, 7, false);
 
     }
 

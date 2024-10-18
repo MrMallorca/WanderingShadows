@@ -2237,6 +2237,10 @@ PrefabInstance:
       value: Kachujin G Rosales
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3991,6 +3995,10 @@ PrefabInstance:
     - target: {fileID: 4409021414197594347, guid: cb35d25bbba098c4cb82c4f29a202579, type: 3}
       propertyPath: m_Name
       value: EscaleraArriba
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409021414197594347, guid: cb35d25bbba098c4cb82c4f29a202579, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5573229012571089400, guid: cb35d25bbba098c4cb82c4f29a202579, type: 3}
       propertyPath: m_LocalPosition.x

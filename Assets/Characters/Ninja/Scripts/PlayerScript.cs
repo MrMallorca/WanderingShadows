@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class PlayerScript : MonoBehaviour
 
     float dashForce = 3f;
     float jumpForce = 6f;
-    bool isOnGround;
+    public bool isOnGround;
 
     int vidas = 2;
     public Sprite[] healthSprites;
@@ -132,7 +133,15 @@ public class PlayerScript : MonoBehaviour
             healthBar.sprite = healthSprites[vidas];
 
         }
+        
+    }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("OutOfBounds"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     IEnumerator  KnockBack()

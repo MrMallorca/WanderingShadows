@@ -7,6 +7,8 @@ public class EnemyBow : MonoBehaviour
     Vector3 offset;
     float arrowForce = 500f;
 
+    BoxCollider attackRange;
+
     public GameObject arrowPrefab;
     Animator anim;
     // Start is called before the first frame update
@@ -15,13 +17,13 @@ public class EnemyBow : MonoBehaviour
         offset = new Vector3(-1, 1.3f, 0);
 
         anim = GetComponent<Animator>();
+        attackRange = GetComponentInParent<BoxCollider>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void Shooting()
@@ -33,5 +35,11 @@ public class EnemyBow : MonoBehaviour
 
     }
 
-  
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == attackRange)
+        {
+            anim.SetBool("isShooting", true);
+        }
+    }
 }

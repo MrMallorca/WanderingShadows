@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|c:\\users\\alumno\\desktop\\wanderingshadows-master\\assets\\characters\\ninja\\scripts\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\ninja\\scripts\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\assets\\characters\\enemies\\scripts\\attackrangedetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\enemies\\scripts\\attackrangedetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\assets\\characters\\enemies\\scripts\\enemystatic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\enemies\\scripts\\enemystatic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\assets\\characters\\enemies\\scripts\\enemybow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FA99736-41AD-BD27-6135-464002795F37}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\enemies\\scripts\\enemybow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerScript.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Ninja\\Scripts\\PlayerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Characters\\Ninja\\Scripts\\PlayerScript.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Ninja\\Scripts\\PlayerScript.cs",
+              "RelativeToolTip": "Assets\\Characters\\Ninja\\Scripts\\PlayerScript.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBQAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T08:02:37.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EnemyBow.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Enemies\\Scripts\\EnemyBow.cs",
+              "RelativeDocumentMoniker": "Assets\\Characters\\Enemies\\Scripts\\EnemyBow.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Enemies\\Scripts\\EnemyBow.cs",
+              "RelativeToolTip": "Assets\\Characters\\Enemies\\Scripts\\EnemyBow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T08:05:11.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AttackRangeDetection.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Enemies\\Scripts\\AttackRangeDetection.cs",
+              "RelativeDocumentMoniker": "Assets\\Characters\\Enemies\\Scripts\\AttackRangeDetection.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Enemies\\Scripts\\AttackRangeDetection.cs",
+              "RelativeToolTip": "Assets\\Characters\\Enemies\\Scripts\\AttackRangeDetection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T08:31:03.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyStatic.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Enemies\\Scripts\\EnemyStatic.cs",
+              "RelativeDocumentMoniker": "Assets\\Characters\\Enemies\\Scripts\\EnemyStatic.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\WanderingShadows-master\\Assets\\Characters\\Enemies\\Scripts\\EnemyStatic.cs",
+              "RelativeToolTip": "Assets\\Characters\\Enemies\\Scripts\\EnemyStatic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T06:45:30.361Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

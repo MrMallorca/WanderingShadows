@@ -9,6 +9,7 @@ public class AttackRangeDetection : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+
         enemyBow = GetComponentInParent<EnemyBow>();
         enemyStatic = GetComponentInParent<EnemyStatic>();
     }
@@ -21,12 +22,34 @@ public class AttackRangeDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") )
         {
-            enemyBow.isInRange = true;
-            enemyStatic.isInRange = true;
+            if (enemyStatic != null)
+            {
+                enemyStatic.isInRange = true;
+            }
+            if(enemyBow != null) 
+            {
+                enemyBow.isInRange = true;
+            }
+        }
+
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (enemyStatic != null)
+            {
+                enemyStatic.isInRange = false;
+            }
+            if (enemyBow != null)
+            {
+                enemyBow.isInRange = false;
+            }
         }
     }
 
-    
+
 }

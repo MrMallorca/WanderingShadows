@@ -22,6 +22,10 @@ public class EnemyStatic : MonoBehaviour
         {
             anim.SetBool("PlayerSpotted", true);
         }
+        else
+        {
+            anim.SetBool("PlayerSpotted", false);
+        }
     }
     
 }

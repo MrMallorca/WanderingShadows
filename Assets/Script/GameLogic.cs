@@ -22,7 +22,7 @@ public class GameLogic : MonoBehaviour
 
     IEnumerator ReloadScene()
     {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(3.29f);
         SceneManager.LoadScene(0);
 
     }

@@ -31,6 +31,10 @@ public class EnemyBow : MonoBehaviour
         {
             anim.SetBool("isShooting", true);
         }
+        else 
+        {
+            anim.SetBool("isShooting", false);
+        }
     }
 
     public void Shooting()

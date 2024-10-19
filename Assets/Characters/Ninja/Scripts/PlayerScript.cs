@@ -16,7 +16,14 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] InputActionReference jump;
     [SerializeField] InputActionReference ability;
 
-    float dashForce = 3f;
+    float dashForce = 11f;
+    bool isDashing;
+    bool canDash = true;
+    float dashingTime = 0.1f;
+    float dashingCooldown = 1f;
+
+    private TrailRenderer tr;
+
     float jumpForce = 6f;
     public bool isOnGround;
 
@@ -26,16 +33,17 @@ public class PlayerScript : MonoBehaviour
 
     public float knockBackForce = 10f;
     public float knockBackUp = 2f;
+    float knockbackDuration = 0.2f;
+
 
     bool isInvunerable;
     public static bool isDead;
     bool startGame = false;
-    float knockbackDuration = 0.2f;
+
 
     GameObject obstacle;
 
     Animator anim;
-    // Start is called before the first frame update
 
     private void OnEnable()
     {
@@ -55,6 +63,7 @@ public class PlayerScript : MonoBehaviour
         obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        tr = GetComponent<TrailRenderer>();
         isDead = false;
         StartCoroutine(StartGame());
     }
@@ -62,11 +71,16 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(isDashing)
+        {
+            return;
+        }
+        //Borrar comentarios luego
         if (startGame == true )
         {
             if(!isInvunerable && isDead == false )
             {
-                anim.SetBool("startGame", false);
+                
 
                 Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime;
                 rb.MovePosition(rb.position + movement);
@@ -98,7 +112,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnJump(InputAction.CallbackContext ctx)
     {
-        if (isOnGround)
+        if (isOnGround && startGame)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             anim.SetBool("isJumping", true);
@@ -109,12 +123,12 @@ public class PlayerScript : MonoBehaviour
     }
     void OnAbility(InputAction.CallbackContext ctx)
     {
-        if(!isDead ) 
+        if(!isDead && canDash) 
         {
-            rb.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
+            StartCoroutine(Dash());
 
         }
-            
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -178,6 +192,25 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("Hitted", false);
         Physics.IgnoreLayerCollision(6, 7, false);
 
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        rb.useGravity = false;
+        Physics.IgnoreLayerCollision(6, 7, true);
+        anim.SetBool("isDashing",true);
+        rb.velocity = new Vector3(transform.localScale.x * dashForce, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.useGravity = true;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        anim.SetBool("isDashing", false);
+        Physics.IgnoreLayerCollision(6, 7, false);
+        canDash = true;
     }
 
 

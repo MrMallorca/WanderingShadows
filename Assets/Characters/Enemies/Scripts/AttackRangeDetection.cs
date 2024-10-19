@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AttackRangeDetection : MonoBehaviour
 {
-    EnemyStatic enemy;
+    EnemyBow enemyBow;
+    EnemyStatic enemyStatic;
     // Start is called before the first frame update
     private void Awake()
     {
-        enemy = GetComponentInParent<EnemyStatic>();
+        enemyBow = GetComponentInParent<EnemyBow>();
+        enemyStatic = GetComponentInParent<EnemyStatic>();
     }
 
     // Update is called once per frame
@@ -17,13 +19,14 @@ public class AttackRangeDetection : MonoBehaviour
         
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.gameObject.CompareTag("Player"))
-    //    {
-    //        enemy.isInRange = true;
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            enemyBow.isInRange = true;
+            enemyStatic.isInRange = true;
+        }
+    }
 
     
 }

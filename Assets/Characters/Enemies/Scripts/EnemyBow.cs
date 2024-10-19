@@ -11,6 +11,9 @@ public class EnemyBow : MonoBehaviour
 
     public GameObject arrowPrefab;
     Animator anim;
+
+    public bool isInRange = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,10 @@ public class EnemyBow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isInRange)
+        {
+            anim.SetBool("isShooting", true);
+        }
     }
 
     public void Shooting()
@@ -35,11 +42,5 @@ public class EnemyBow : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == attackRange)
-        {
-            anim.SetBool("isShooting", true);
-        }
-    }
+   
 }

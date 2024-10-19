@@ -109,9 +109,8 @@ public class PlayerScript : MonoBehaviour
     }
     void OnAbility(InputAction.CallbackContext ctx)
     {
-        if(!isDead && GameObject.FindGameObjectWithTag("Ninja")) 
+        if(!isDead ) 
         {
-            Debug.Log("llego");
             rb.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
 
         }

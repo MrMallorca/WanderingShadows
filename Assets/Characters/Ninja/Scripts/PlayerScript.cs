@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
     Rigidbody rb;
-    float speed = 4.0f;
+    float speed = 5.0f;
 
     [SerializeField] InputActionReference jump;
     [SerializeField] InputActionReference ability;
@@ -198,7 +198,10 @@ public class PlayerScript : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        rb.useGravity = false;
+        if(isOnGround)
+        {
+            rb.useGravity = false;
+        }
         Physics.IgnoreLayerCollision(6, 7, true);
         anim.SetBool("isDashing",true);
         rb.velocity = new Vector3(transform.localScale.x * dashForce, 0f);

@@ -1,0 +1,54 @@
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "Input",
+            "id": "587860df-ed87-4e71-8a1b-5f15db63034b",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "931f0969-6168-48e5-9d60-c7c708db5460",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "e818d071-54e2-461e-bc36-fda81f5fd614",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7483a928-5fcd-4d35-8414-bac673f9e970",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7db6de0f-362c-4cb8-973a-86b82e290f90",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

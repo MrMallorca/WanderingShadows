@@ -380,7 +380,10 @@
 "Assets/Characters/Enemies/Scripts/EnemyBow.cs"
 "Assets/Characters/Enemies/Scripts/EnemyStatic.cs"
 "Assets/Characters/Ninja/Scripts/PlayerScript.cs"
+"Assets/Game Boy Splash Screen/ColorRamp.cs"
 "Assets/Script/GameLogic.cs"
+"Assets/Script/NavigateToAfterTimeOrPress.cs"
+"Assets/Script/StartGame.cs"
 -langversion:9.0
 
 /deterministic

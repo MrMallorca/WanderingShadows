@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour
 {
     public GameObject player;
+    string escenaACambiar;
+
+    [SerializeField] GameObject canvasPause;
     // Start is called before the first frame update
     void Start()
     {
+        escenaACambiar = "Level1";
     }
 
     // Update is called once per frame
@@ -23,7 +27,18 @@ public class GameLogic : MonoBehaviour
     IEnumerator ReloadScene()
     {
         yield return new WaitForSeconds(3.29f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(escenaACambiar);
 
+    }
+
+    public void PauseMenu()
+    {
+        Time.timeScale = 0f;
+        canvasPause.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        canvasPause.SetActive(false);
     }
 }

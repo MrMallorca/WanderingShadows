@@ -45,6 +45,8 @@ public class PlayerScript : MonoBehaviour
 
     Animator anim;
 
+    string escenaACambiar = "Level1";
+
     private void OnEnable()
     {
         jump.action.Enable();
@@ -153,7 +155,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("OutOfBounds"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(escenaACambiar);
         }
     }
 

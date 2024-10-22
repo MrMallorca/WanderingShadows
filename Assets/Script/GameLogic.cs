@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-    public GameObject player;
     string escenaACambiar;
 
     [SerializeField] GameObject canvasPause;
@@ -36,9 +35,5 @@ public class GameLogic : MonoBehaviour
         Time.timeScale = 0f;
         canvasPause.SetActive(true);
     }
-    public void ResumeGame()
-    {
-        Time.timeScale = 1;
-        canvasPause.SetActive(false);
-    }
+   
 }

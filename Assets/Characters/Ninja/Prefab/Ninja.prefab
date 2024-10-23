@@ -426,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       propertyPath: m_Name
-      value: Kachujin G Rosales
+      value: NinjaPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       propertyPath: m_Layer
@@ -779,6 +779,9 @@ PrefabInstance:
       addedObject: {fileID: 7272337629829399003}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7694122334954855356}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3878837139641959937}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       insertIndex: -1
@@ -811,7 +814,7 @@ CapsuleCollider:
   m_Radius: 0.2042083
   m_Height: 1.6973531
   m_Direction: 1
-  m_Center: {x: -8.595992e-17, y: 0.81, z: -0.021673888}
+  m_Center: {x: 0, y: 0.92, z: 0}
 --- !u!54 &4627917095583686214
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -852,7 +855,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
-  ability: {fileID: -6806177741155546058, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
   isOnGround: 0
   healthSprites:
   - {fileID: -1894803630, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
@@ -861,6 +863,19 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   knockBackForce: 1
   knockBackUp: 5
+--- !u!114 &7694122334954855356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997500375701702175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad85c76595f9c6943834fa1b53e588b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: -6806177741155546058, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
 --- !u!95 &3878837139641959937
 Animator:
   serializedVersion: 5

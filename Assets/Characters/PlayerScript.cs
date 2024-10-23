@@ -14,15 +14,6 @@ public class PlayerScript : MonoBehaviour
     float speed = 5.0f;
 
     [SerializeField] InputActionReference jump;
-    [SerializeField] InputActionReference ability;
-
-    float dashForce = 11f;
-    bool isDashing;
-    bool canDash = true;
-    float dashingTime = 0.1f;
-    float dashingCooldown = 1f;
-
-    private TrailRenderer tr;
 
     float jumpForce = 6f;
     public bool isOnGround;
@@ -51,11 +42,6 @@ public class PlayerScript : MonoBehaviour
     {
         jump.action.Enable();
 
-        ability.action.Enable();
-
-        ability.action.performed += OnAbility;
-        ability.action.canceled += OnAbility;
-
         jump.action.performed += OnJump;
         jump.action.canceled += OnJump;
     }
@@ -65,19 +51,16 @@ public class PlayerScript : MonoBehaviour
         obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        tr = GetComponent<TrailRenderer>();
         isDead = false;
+
+        
         StartCoroutine(StartGame());
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(isDashing)
-        {
-            return;
-        }
-        //Borrar comentarios luego
         if (startGame == true )
         {
             if(!isInvunerable && isDead == false )
@@ -104,10 +87,6 @@ public class PlayerScript : MonoBehaviour
         jump.action.performed -= OnJump;
         jump.action.canceled -= OnJump;
 
-        ability.action.performed -= OnAbility;
-        ability.action.canceled -= OnAbility;
-
-        ability.action.Disable();
 
         jump.action.Disable();
     }
@@ -123,15 +102,7 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
-    void OnAbility(InputAction.CallbackContext ctx)
-    {
-        if(!isDead && canDash) 
-        {
-            StartCoroutine(Dash());
-
-        }
-
-    }
+   
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -178,7 +149,10 @@ public class PlayerScript : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(4);
+        if(gameObject.name == "Ninja")
+        {
+            yield return new WaitForSeconds(4);
+        }
         startGame = true;
         anim.SetBool("startGame", true);
     }
@@ -196,28 +170,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        if(isOnGround)
-        {
-            rb.useGravity = false;
-        }
-        Physics.IgnoreLayerCollision(6, 7, true);
-        anim.SetBool("isDashing",true);
-        rb.velocity = new Vector3(transform.localScale.x * dashForce, 0f);
-        tr.emitting = true;
-        yield return new WaitForSeconds(dashingTime);
-        tr.emitting = false;
-        rb.useGravity = true;
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        anim.SetBool("isDashing", false);
-        Physics.IgnoreLayerCollision(6, 7, false);
-        canDash = true;
-    }
-
+   
 
 
 

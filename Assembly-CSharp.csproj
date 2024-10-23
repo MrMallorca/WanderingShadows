@@ -60,16 +60,18 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Characters\Ninja\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Script\StartGame.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\AttackRangeDetection.cs" />
+    <Compile Include="Assets\Characters\Ninja\Scripts\Ninja.cs" />
     <Compile Include="Assets\Script\NavigateToAfterTimeOrPress.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\Arrow.cs" />
     <Compile Include="Assets\Script\CanvasOptions.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyBow.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyStatic.cs" />
     <Compile Include="Assets\Script\GameLogic.cs" />
+    <Compile Include="Assets\Characters\PlayerScript.cs" />
     <Compile Include="Assets\Game Boy Splash Screen\ColorRamp.cs" />
+    <Compile Include="Assets\Characters\Samurai\Scripts\Samurai.cs" />
     <Compile Include="Assets\Script\DoorChangeMechanics.cs" />
     <Compile Include="Assets\Enviroment\Level\ChangeLevel.cs" />
   </ItemGroup>

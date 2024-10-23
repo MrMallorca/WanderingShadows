@@ -11,7 +11,8 @@ public class DoorChangeMechanics : MonoBehaviour
     GameObject lastPlayer;
 
     Vector3 lastPlayerPosition;
-    Vector3 offset = new Vector3(0,1.5f,0);
+    Quaternion lastPlayerRotation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +27,16 @@ public class DoorChangeMechanics : MonoBehaviour
         if (lastPlayer != null)
         {
             lastPlayerPosition = lastPlayer.transform.position;
+            lastPlayerRotation = lastPlayer.transform.rotation;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject == lastPlayer)
         {
-
-            playerToInvoke.transform.position = lastPlayerPosition;
             Destroy(lastPlayer);
-            Instantiate(playerToInvoke, lastPlayerPosition + offset, Quaternion.identity);
+            Instantiate(playerToInvoke, lastPlayerPosition , lastPlayerRotation);
         }
     }
 }

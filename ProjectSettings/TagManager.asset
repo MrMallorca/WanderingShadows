@@ -9,6 +9,7 @@ TagManager:
   - Ninja
   - Damageable
   - OutOfBounds
+  - HealthBar
   layers:
   - Default
   - TransparentFX

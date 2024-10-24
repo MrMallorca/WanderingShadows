@@ -387,8 +387,10 @@
 "Assets/Script/CanvasOptions.cs"
 "Assets/Script/DoorChangeMechanics.cs"
 "Assets/Script/GameLogic.cs"
+"Assets/Script/HealthBar.cs"
 "Assets/Script/NavigateToAfterTimeOrPress.cs"
 "Assets/Script/StartGame.cs"
+"Assets/Script/VirtualCamera.cs"
 -langversion:9.0
 
 /deterministic

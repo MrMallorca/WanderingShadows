@@ -18,7 +18,6 @@ public class PlayerScript : MonoBehaviour
     float jumpForce = 6f;
     public bool isOnGround;
 
-    int vidas = 2;
     public Sprite[] healthSprites;
     public Image healthBar;
 
@@ -38,6 +37,8 @@ public class PlayerScript : MonoBehaviour
 
     string escenaACambiar = "Level1";
 
+    HealthBar healthBarScript;
+
     private void OnEnable()
     {
         jump.action.Enable();
@@ -48,6 +49,10 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        GameObject healthBarObject = GameObject.FindGameObjectWithTag("HealthBar");
+
+        healthBarScript = healthBarObject.GetComponent<HealthBar>();
+
         obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -66,18 +71,21 @@ public class PlayerScript : MonoBehaviour
             if(!isInvunerable && isDead == false )
             {
                 
-
                 Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime;
                 rb.MovePosition(rb.position + movement);
             }
             
         }
-        if(vidas == 0 && isDead == false) 
-        {
-            isDead = true;
-            anim.SetTrigger("isDead");
-        }
 
+        if (healthBarScript != null)
+        {
+
+                if (healthBarScript.vidas == 0 && isDead == false) 
+                {
+                      isDead = true;
+                      anim.SetTrigger("isDead");
+                }
+        }
     }
 
     private void OnDisable()
@@ -115,8 +123,8 @@ public class PlayerScript : MonoBehaviour
         {
 
             StartCoroutine(KnockBack());
-            vidas--;
-            healthBar.sprite = healthSprites[vidas];
+            healthBarScript.vidas = healthBarScript.vidas - 1;
+            healthBar.sprite = healthSprites[healthBarScript.vidas];
 
         }
         

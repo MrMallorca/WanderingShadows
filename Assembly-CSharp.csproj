@@ -63,6 +63,7 @@
     <Compile Include="Assets\Script\StartGame.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\AttackRangeDetection.cs" />
     <Compile Include="Assets\Characters\Ninja\Scripts\Ninja.cs" />
+    <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\NavigateToAfterTimeOrPress.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\Arrow.cs" />
     <Compile Include="Assets\Script\CanvasOptions.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyStatic.cs" />
     <Compile Include="Assets\Script\GameLogic.cs" />
     <Compile Include="Assets\Characters\PlayerScript.cs" />
+    <Compile Include="Assets\Script\VirtualCamera.cs" />
     <Compile Include="Assets\Game Boy Splash Screen\ColorRamp.cs" />
     <Compile Include="Assets\Characters\Samurai\Scripts\Samurai.cs" />
     <Compile Include="Assets\Script\DoorChangeMechanics.cs" />

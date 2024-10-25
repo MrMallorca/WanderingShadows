@@ -11,15 +11,15 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
     Rigidbody rb;
-    float speed = 5.0f;
+    public float speed;
 
-    [SerializeField] InputActionReference jump;
 
-    float jumpForce = 6f;
-    public bool isOnGround;
+
 
     public Sprite[] healthSprites;
-    public Image healthBar;
+    Image healthBar;
+
+    [SerializeField] GameObject healthBarObj;
 
     public float knockBackForce = 10f;
     public float knockBackUp = 2f;
@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
 
     bool isInvunerable;
     public static bool isDead;
-    bool startGame = false;
+    public static bool startGame = false;
 
 
     GameObject obstacle;
@@ -37,21 +37,18 @@ public class PlayerScript : MonoBehaviour
 
     string escenaACambiar = "Level1";
 
-    HealthBar healthBarScript;
+    GameLogic gameLogicScript;
 
-    private void OnEnable()
-    {
-        jump.action.Enable();
-
-        jump.action.performed += OnJump;
-        jump.action.canceled += OnJump;
-    }
+   
 
     void Start()
     {
-        GameObject healthBarObject = GameObject.FindGameObjectWithTag("HealthBar");
+        GameObject gameLogicObject = GameObject.FindGameObjectWithTag("GameLogic");
+        gameLogicScript = gameLogicObject.GetComponent<GameLogic>();
 
-        healthBarScript = healthBarObject.GetComponent<HealthBar>();
+        Debug.Log(healthBarObj);
+        healthBar = healthBarObj.GetComponentInChildren<Image>();
+        Debug.Log(healthBar);
 
         obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
@@ -66,6 +63,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (startGame == true )
         {
             if(!isInvunerable && isDead == false )
@@ -77,10 +75,10 @@ public class PlayerScript : MonoBehaviour
             
         }
 
-        if (healthBarScript != null)
+        if (gameLogicScript != null)
         {
 
-                if (healthBarScript.vidas == 0 && isDead == false) 
+                if (gameLogicScript.vidas <= 0 && isDead == false) 
                 {
                       isDead = true;
                       anim.SetTrigger("isDead");
@@ -88,43 +86,20 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-       
+  
 
-        jump.action.performed -= OnJump;
-        jump.action.canceled -= OnJump;
-
-
-        jump.action.Disable();
-    }
-
-    void OnJump(InputAction.CallbackContext ctx)
-    {
-        if (isOnGround && startGame)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            anim.SetBool("isJumping", true);
-
-            isOnGround = false;
-
-        }
-    }
+    
    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            anim.SetBool("isJumping", false);
-            isOnGround = true;
-        }
-        else if(collision.gameObject.CompareTag("Obstacle") 
+       
+        if(collision.gameObject.CompareTag("Obstacle") 
             || collision.gameObject.CompareTag("Damageable"))
         {
 
             StartCoroutine(KnockBack());
-            healthBarScript.vidas = healthBarScript.vidas - 1;
-            healthBar.sprite = healthSprites[healthBarScript.vidas];
+            gameLogicScript.vidas = gameLogicScript.vidas - 1;
+            healthBar.sprite = healthSprites[gameLogicScript.vidas];
 
         }
         

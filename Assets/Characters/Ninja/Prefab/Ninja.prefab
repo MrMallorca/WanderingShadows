@@ -426,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       propertyPath: m_Name
-      value: NinjaPlayer
+      value: Ninja
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1fabade89df49c4e869bb0a958e6985, type: 3}
       propertyPath: m_Layer
@@ -854,13 +854,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2525075243ad11545b1c4d9631091ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
-  isOnGround: 0
+  speed: 5
   healthSprites:
   - {fileID: -1894803630, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   - {fileID: -649418047, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   - {fileID: 1687183995, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
-  healthBar: {fileID: 0}
+  healthBarObj: {fileID: 2033393549177975936, guid: 6005a3266bde8404c8d3bc1655c3d16a, type: 3}
   knockBackForce: 1
   knockBackUp: 5
 --- !u!114 &7694122334954855356
@@ -876,6 +875,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: -6806177741155546058, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
+  jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
+  jumpForce: 6
+  isOnGround: 0
 --- !u!95 &3878837139641959937
 Animator:
   serializedVersion: 5

@@ -847,6 +847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93162722c30a3b49ac7ea29ae7dcd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
+  jumpForce: 4
+  isOnGround: 0
 --- !u!114 &1776379095617041638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,13 +862,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2525075243ad11545b1c4d9631091ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
-  isOnGround: 0
+  speed: 4
   healthSprites:
   - {fileID: -1894803630, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   - {fileID: -649418047, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   - {fileID: 1687183995, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
-  healthBar: {fileID: 0}
+  healthBarObj: {fileID: 2033393549177975936, guid: 6005a3266bde8404c8d3bc1655c3d16a, type: 3}
   knockBackForce: 10
   knockBackUp: 2
 --- !u!54 &9075614746420421541

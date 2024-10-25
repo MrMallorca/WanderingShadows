@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
+    public int vidas = 2;
+
     string escenaACambiar;
 
     [SerializeField] GameObject canvasPause;

@@ -10,7 +10,7 @@ public class Ninja : MonoBehaviour
 {
     [SerializeField] InputActionReference ability;
 
-    float dashForce = 11f;
+    float dashForce = 5f;
     bool isDashing;
     bool canDash = true;
     float dashingTime = 0.1f;
@@ -22,6 +22,12 @@ public class Ninja : MonoBehaviour
 
     Rigidbody rb;
 
+    [SerializeField] InputActionReference jump;
+
+    public float jumpForce;
+    public bool isOnGround;
+
+
 
     // Start is called before the first frame update
 
@@ -30,11 +36,18 @@ public class Ninja : MonoBehaviour
 
         ability.action.Enable();
 
+        jump.action.Enable();
+
+        jump.action.performed += OnJump;
+        jump.action.canceled += OnJump;
+
         ability.action.performed += OnAbility;
         ability.action.canceled += OnAbility;
 
        
     }
+
+  
     void Start()
     {
         tr = GetComponent<TrailRenderer>();
@@ -51,6 +64,22 @@ public class Ninja : MonoBehaviour
         }
     }
 
+    void OnJump(InputAction.CallbackContext ctx)
+    {
+        if(PlayerScript.startGame)
+        {
+            if (isOnGround)
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                anim.SetBool("isJumping", true);
+
+                isOnGround = false;
+
+            }
+        }
+        
+    }
+
     private void OnDisable()
     {
 
@@ -58,8 +87,26 @@ public class Ninja : MonoBehaviour
         ability.action.performed -= OnAbility;
         ability.action.canceled -= OnAbility;
 
+      
+
+            jump.action.performed -= OnJump;
+            jump.action.canceled -= OnJump;
+
+
+            jump.action.Disable();
+        
+
         ability.action.Disable();
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetBool("isJumping", false);
+            isOnGround = true;
+        }
     }
 
     void OnAbility(InputAction.CallbackContext ctx)
@@ -72,21 +119,23 @@ public class Ninja : MonoBehaviour
 
     }
 
+
+
     private IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
-        rb.useGravity = false;
         Physics.IgnoreLayerCollision(6, 7, true);
-        anim.SetBool("isDashing", true);
-        rb.velocity = new Vector3(transform.localScale.x * dashForce, 0f);
+        rb.velocity = Vector3.zero;
+        rb.useGravity = false;
+        rb.AddForce(gameObject.transform.forward * dashForce, ForceMode.Impulse);
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
+        rb.useGravity = false;
         tr.emitting = false;
         rb.useGravity = true;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
-        anim.SetBool("isDashing", false);
         Physics.IgnoreLayerCollision(6, 7, false);
         canDash = true;
     }

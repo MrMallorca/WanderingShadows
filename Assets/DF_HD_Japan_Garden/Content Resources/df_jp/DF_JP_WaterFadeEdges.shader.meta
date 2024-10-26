@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 24f3aa16f99f39345a16cf4c59626a31
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _FoamTexture: {fileID: 2800000, guid: 311732bad2696664eb8c112e400a3286, type: 3}
+  - _FoamTextureNormal: {fileID: 2800000, guid: 470aeddb24a251842889030a988b872d,
+      type: 3}
+  - _DF_JP_Water_Normal_2: {fileID: 2800000, guid: f861f87bcece67745af496e5e053dca7,
+      type: 3}
+  - _DF_JP_Water_Normal_1: {fileID: 2800000, guid: cc73f64daab04b341927b065a3cc11d7,
+      type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

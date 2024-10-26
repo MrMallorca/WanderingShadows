@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,69 +8,76 @@ public class Samurai : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] InputActionReference jump;
+    [SerializeField] InputActionReference ability;
 
-    Rigidbody rb;
+    bool isDeflecting;
+    bool canDeflect = true;
+    float deflectTime = 1f;
+    float deflectCooldown = 2f;
 
     Animator anim;
+    CharacterController controller;
 
-    int jumpCount;
-    public float jumpForce;
-    public bool isOnGround;
+    DeflectionZone deflectionZone;
+
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
 
+        deflectionZone = GetComponentInChildren<DeflectionZone>(); 
+
+        deflectionZone.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
-        jump.action.Enable();
 
-        jump.action.performed += OnJump;
-        jump.action.canceled += OnJump;
+        ability.action.Enable();
+
+        ability.action.performed += OnAbility;
+        ability.action.canceled += OnAbility;
     }
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(jumpCount);
 
     }
-    void OnJump(InputAction.CallbackContext ctx)
+    void OnAbility(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && PlayerScript.startGame)
+        if (!PlayerScript.isDead && canDeflect)
         {
-            
-            if(jumpCount < 2)
-            {
-                
-                    rb.velocity = Vector3.up * jumpForce;
-                    anim.SetBool("isJumping", true);
-                    jumpCount++;
-                    isOnGround = false;
+            StartCoroutine(Deflect());
 
-            }
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            anim.SetBool("isJumping", false);
-            jumpCount = 0;
-            isOnGround = true;
-        }
     }
 
     private void OnDisable()
     {
 
 
-        jump.action.performed -= OnJump;
-        jump.action.canceled -= OnJump;
+        ability.action.performed -= OnAbility;
+        ability.action.canceled -= OnAbility;
 
 
-        jump.action.Disable();
+        ability.action.Disable();
+
+    }
+
+    private IEnumerator Deflect()
+    {
+        canDeflect = false;
+        isDeflecting = true;
+
+        deflectionZone.gameObject.SetActive(true);
+        yield return new WaitForSeconds(deflectTime);
+
+        isDeflecting = false;
+
+        yield return new WaitForSeconds(deflectCooldown);
+        canDeflect = true;
+        deflectionZone.gameObject.SetActive(false);
+
     }
 }

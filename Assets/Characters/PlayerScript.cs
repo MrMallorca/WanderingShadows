@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -12,9 +13,6 @@ public class PlayerScript : MonoBehaviour
 {
     Rigidbody rb;
     public float speed;
-
-
-
 
     public Sprite[] healthSprites;
     Image healthBar;
@@ -39,20 +37,39 @@ public class PlayerScript : MonoBehaviour
 
     GameLogic gameLogicScript;
 
-   
+    CharacterController controller;
+
+    float verticalVelocity;
+    const float gravity = -9.81f;
+    public float jumpForce;
+
+    int jumpCount;
+
+    [SerializeField] InputActionReference jump;
+
+    private void OnEnable()
+    {
+
+        jump.action.Enable();
+
+        jump.action.performed += OnJump;
+        jump.action.canceled += OnJump;
+
+    }
 
     void Start()
     {
         GameObject gameLogicObject = GameObject.FindGameObjectWithTag("GameLogic");
         gameLogicScript = gameLogicObject.GetComponent<GameLogic>();
 
-        Debug.Log(healthBarObj);
         healthBar = healthBarObj.GetComponentInChildren<Image>();
-        Debug.Log(healthBar);
 
         obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
+        controller = GetComponent<CharacterController>();
+
         isDead = false;
 
         
@@ -68,11 +85,20 @@ public class PlayerScript : MonoBehaviour
         {
             if(!isInvunerable && isDead == false )
             {
+                Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime + 
+                    Vector3.up * verticalVelocity * Time.deltaTime;
+                controller.Move(movement);
+
+
                 
-                Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime;
-                rb.MovePosition(rb.position + movement);
             }
             
+        }
+
+        if (controller.isGrounded)
+        {
+            jumpCount = 0;
+            verticalVelocity = 0;
         }
 
         if (gameLogicScript != null)
@@ -84,32 +110,31 @@ public class PlayerScript : MonoBehaviour
                       anim.SetTrigger("isDead");
                 }
         }
+
+        verticalVelocity += gravity * Time.deltaTime;
+        anim.SetBool("isJumping", !controller.isGrounded);
+
     }
 
-  
 
-    
-   
-    private void OnCollisionEnter(Collision collision)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-       
-        if(collision.gameObject.CompareTag("Obstacle") 
-            || collision.gameObject.CompareTag("Damageable"))
+        if (hit.gameObject.CompareTag("Damageable"))
         {
-
             StartCoroutine(KnockBack());
             gameLogicScript.vidas = gameLogicScript.vidas - 1;
             healthBar.sprite = healthSprites[gameLogicScript.vidas];
 
         }
-        
     }
+
+
+    
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("OutOfBounds"))
         {
-            SceneManager.LoadScene(escenaACambiar);
         }
     }
 
@@ -153,9 +178,49 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-   
+    void OnJump(InputAction.CallbackContext ctx)
+    {
+        if (PlayerScript.startGame)
+        {
+            if (controller.isGrounded)
+            {
+
+                anim.SetBool("isJumping", true);
+
+                verticalVelocity = jumpForce;
+
+            }
+        }
+
+        if (ctx.performed && PlayerScript.startGame)
+        {
+            if (gameObject.name == "Samurai")
+            {
+                if (jumpCount < 2)
+                {
+
+                    verticalVelocity = jumpForce;
+
+                    jumpCount++;
+
+                }
+            }
+
+           
+        }
+
+    }
+
+    private void OnDisable()
+    {
+
+        jump.action.performed -= OnJump;
+        jump.action.canceled -= OnJump;
 
 
+        jump.action.Disable();
+
+    }
 
 
 }

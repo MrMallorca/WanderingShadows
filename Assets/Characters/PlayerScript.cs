@@ -9,13 +9,11 @@ using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour, ICharacterStatus
 {
-    Rigidbody rb;
     public float speed;
 
-    public Sprite[] healthSprites;
-    Image healthBar;
+   
 
     [SerializeField] GameObject healthBarObj;
 
@@ -25,17 +23,14 @@ public class PlayerScript : MonoBehaviour
 
 
     bool isInvunerable;
-    public static bool isDead;
-    public static bool startGame = false;
+    public bool isDead;
+    bool startGame = false;
 
-
-    GameObject obstacle;
 
     Animator anim;
 
     string escenaACambiar = "Level1";
 
-    GameLogic gameLogicScript;
 
     CharacterController controller;
 
@@ -46,6 +41,13 @@ public class PlayerScript : MonoBehaviour
     int jumpCount;
 
     [SerializeField] InputActionReference jump;
+
+    public bool isHitted;
+
+    public bool Hit => isHitted;
+    public bool Dead => isDead;
+
+    
 
     private void OnEnable()
     {
@@ -59,14 +61,9 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        GameObject gameLogicObject = GameObject.FindGameObjectWithTag("GameLogic");
-        gameLogicScript = gameLogicObject.GetComponent<GameLogic>();
 
-        healthBar = healthBarObj.GetComponentInChildren<Image>();
 
-        obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
 
         controller = GetComponent<CharacterController>();
 
@@ -101,15 +98,14 @@ public class PlayerScript : MonoBehaviour
             verticalVelocity = 0;
         }
 
-        if (gameLogicScript != null)
+        if (GameLogic.vidas <= 0 && isDead == false) 
         {
-
-                if (gameLogicScript.vidas <= 0 && isDead == false) 
-                {
-                      isDead = true;
-                      anim.SetTrigger("isDead");
-                }
+            isDead = true;
+            anim.SetTrigger("isDead");
         }
+
+       
+
 
         verticalVelocity += gravity * Time.deltaTime;
         anim.SetBool("isJumping", !controller.isGrounded);
@@ -122,8 +118,7 @@ public class PlayerScript : MonoBehaviour
         if (hit.gameObject.CompareTag("Damageable"))
         {
             StartCoroutine(KnockBack());
-            gameLogicScript.vidas = gameLogicScript.vidas - 1;
-            healthBar.sprite = healthSprites[gameLogicScript.vidas];
+            
 
         }
     }
@@ -140,6 +135,7 @@ public class PlayerScript : MonoBehaviour
 
     IEnumerator  KnockBack()
     {
+        isHitted = true;
 
         StartCoroutine(Hitted());
 
@@ -152,7 +148,7 @@ public class PlayerScript : MonoBehaviour
 
         isInvunerable = false;
 
-      
+
     }
 
     IEnumerator StartGame()
@@ -180,7 +176,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnJump(InputAction.CallbackContext ctx)
     {
-        if (PlayerScript.startGame)
+        if (startGame)
         {
             if (controller.isGrounded)
             {
@@ -192,7 +188,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        if (ctx.performed && PlayerScript.startGame)
+        if (ctx.performed && startGame)
         {
             if (gameObject.name == "Samurai")
             {

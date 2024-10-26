@@ -20,15 +20,21 @@ public class Samurai : MonoBehaviour
 
     DeflectionZone deflectionZone;
 
+    PlayerScript playerScript;
 
+    [SerializeField] GameObject deflectParticle;
     void Start()
     {
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
 
+        playerScript = GetComponent<PlayerScript>();
+
         deflectionZone = GetComponentInChildren<DeflectionZone>(); 
 
         deflectionZone.gameObject.SetActive(false);
+
+        
     }
     private void OnEnable()
     {
@@ -45,7 +51,7 @@ public class Samurai : MonoBehaviour
     }
     void OnAbility(InputAction.CallbackContext ctx)
     {
-        if (!PlayerScript.isDead && canDeflect)
+        if (!playerScript.isDead && canDeflect)
         {
             StartCoroutine(Deflect());
 
@@ -71,6 +77,7 @@ public class Samurai : MonoBehaviour
         isDeflecting = true;
 
         deflectionZone.gameObject.SetActive(true);
+        deflectParticle.gameObject.SetActive(true);
         yield return new WaitForSeconds(deflectTime);
 
         isDeflecting = false;
@@ -78,6 +85,8 @@ public class Samurai : MonoBehaviour
         yield return new WaitForSeconds(deflectCooldown);
         canDeflect = true;
         deflectionZone.gameObject.SetActive(false);
+        deflectParticle.gameObject.SetActive(false);
+
 
     }
 }

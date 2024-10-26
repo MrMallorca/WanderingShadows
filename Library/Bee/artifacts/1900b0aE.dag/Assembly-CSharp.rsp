@@ -379,6 +379,7 @@
 "Assets/Characters/Enemies/Scripts/AttackRangeDetection.cs"
 "Assets/Characters/Enemies/Scripts/EnemyBow.cs"
 "Assets/Characters/Enemies/Scripts/EnemyStatic.cs"
+"Assets/Characters/ICharacterStatus.cs"
 "Assets/Characters/Ninja/Scripts/Ninja.cs"
 "Assets/Characters/PlayerScript.cs"
 "Assets/Characters/Samurai/Scripts/DeflectionZone.cs"

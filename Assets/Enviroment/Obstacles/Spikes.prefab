@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8386368731619700472}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2201cc58c09c83f46a0c2a09e2dfedd8, type: 3}
       propertyPath: m_TagString
-      value: Obstacle
+      value: Damageable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

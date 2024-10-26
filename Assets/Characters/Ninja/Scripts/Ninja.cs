@@ -25,6 +25,7 @@ public class Ninja : MonoBehaviour
 
     CharacterController controller;
 
+    PlayerScript playerScript;
 
     // Start is called before the first frame update
 
@@ -47,6 +48,8 @@ public class Ninja : MonoBehaviour
         tr = GetComponent<TrailRenderer>();
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+
+        playerScript = GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame
@@ -76,7 +79,7 @@ public class Ninja : MonoBehaviour
 
     void OnAbility(InputAction.CallbackContext ctx)
     {
-        if (!PlayerScript.isDead && canDash)
+        if (!playerScript.isDead && canDash)
         {
             StartCoroutine(Dash());
 

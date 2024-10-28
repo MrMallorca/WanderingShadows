@@ -79,13 +79,13 @@
     <Compile Include="Assets\DF_HD_Japan_Garden\Samples\Samples_01\High Definition RP\7.1.8\Procedural Sky\Runtime\ProceduralSky\ProceduralSkyRenderer.cs" />
     <Compile Include="Assets\Characters\Samurai\Scripts\Samurai.cs" />
     <Compile Include="Assets\Script\DoorChangeMechanics.cs" />
-    <Compile Include="Assets\Enviroment\Level\ChangeLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\Ciconia Studio(double-sided shader)\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\Ciconia Studio(double-sided shader)\Shaders\Double Sided Shaders\Double Sided Emissive Diffuse.shader" />
+    <None Include="Assets\___www.unityassetcollection.com___.txt" />
     <None Include="Assets\_www.unityassetcollection.com.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\ErbGameArt\Sword slash FX\Readme.txt" />

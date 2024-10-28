@@ -938,7 +938,7 @@ MonoBehaviour:
   knockBackForce: 10
   knockBackUp: 2
   isDead: 0
-  jumpForce: 4
+  jumpForce: 5
   jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
   isHitted: 0
 --- !u!4 &823810555662287196 stripped

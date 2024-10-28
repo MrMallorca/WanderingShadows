@@ -91,6 +91,8 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
             }
             
         }
+        Debug.Log(jumpCount);
+
 
         if (controller.isGrounded)
         {
@@ -190,7 +192,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (ctx.performed && startGame)
         {
-            if (gameObject.name == "Samurai")
+            if (gameObject.name == "Samurai(Clone)")
             {
                 if (jumpCount < 2)
                 {

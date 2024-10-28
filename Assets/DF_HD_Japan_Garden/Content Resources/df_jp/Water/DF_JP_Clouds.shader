@@ -75,6 +75,7 @@ Shader "DF_JP_Clouds"
 
 			Blend [_SrcBlend] [_DstBlend] , [_AlphaSrcBlend] [_AlphaDstBlend]
 			Cull [_CullMode]
+
 			ZTest [_ZTestTransparent]
 			ZWrite [_ZWrite]
 
@@ -255,36 +256,47 @@ Shader "DF_JP_Clouds"
 
 			VertexOutput Vert( VertexInput inputMesh  )
 			{
-				VertexOutput o;
+				 VertexOutput o;
 				UNITY_SETUP_INSTANCE_ID(inputMesh);
 				UNITY_TRANSFER_INSTANCE_ID(inputMesh, o);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+    
+				// Convertimos la posición del vértice de objeto a espacio clip
+				float4 ase_clipPos = TransformWorldToHClip(TransformObjectToWorld(inputMesh.positionOS));
+    
+				// Calcular la posición de pantalla manualmente y normalizar a [0, 1]
+				float2 screenPos = ase_clipPos.xy / ase_clipPos.w * 0.5 + 0.5;
+				o.ase_texcoord2 = float4(screenPos, 0, 1); // Asignamos a ase_texcoord2
 
-				float4 ase_clipPos = TransformWorldToHClip( TransformObjectToWorld(inputMesh.positionOS));
-				float4 screenPos = ComputeScreenPos( ase_clipPos , _ProjectionParams.x );
-				o.ase_texcoord2 = screenPos;
-				
+				// Transferimos las coordenadas de textura
 				o.ase_texcoord1.xy = inputMesh.ase_texcoord.xy;
-				
-				//setting value to unused interpolator channels and avoid initialization warnings
+
+				// Establecemos valores para canales no usados de interpoladores y evitar advertencias de inicialización
 				o.ase_texcoord1.zw = 0;
+
+				// Definimos el valor del vértice según las condiciones
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				float3 defaultVertexValue = inputMesh.positionOS.xyz;
+					float3 defaultVertexValue = inputMesh.positionOS.xyz;
 				#else
-				float3 defaultVertexValue = float3( 0, 0, 0 );
-				#endif
-				float3 vertexValue = defaultVertexValue;
-				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				inputMesh.positionOS.xyz = vertexValue;
-				#else
-				inputMesh.positionOS.xyz += vertexValue;
+					float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
 
+				float3 vertexValue = defaultVertexValue;
+
+				#ifdef ASE_ABSOLUTE_VERTEX_POS
+					inputMesh.positionOS.xyz = vertexValue;
+				#else
+					inputMesh.positionOS.xyz += vertexValue;
+				#endif
+
+				// Aseguramos que la normal del objeto esté establecida correctamente
 				inputMesh.normalOS = inputMesh.normalOS;
 
+				// Calculamos la posición en espacio mundial y clip
 				float3 positionRWS = TransformObjectToWorld(inputMesh.positionOS);
 				o.positionCS = TransformWorldToHClip(positionRWS);
 				o.positionRWS = positionRWS;
+
 				return o;
 			}
 
@@ -518,32 +530,43 @@ Shader "DF_JP_Clouds"
 				VertexOutput o;
 				UNITY_SETUP_INSTANCE_ID(inputMesh);
 				UNITY_TRANSFER_INSTANCE_ID(inputMesh, o);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
-
-				float4 ase_clipPos = TransformWorldToHClip( TransformObjectToWorld(inputMesh.positionOS));
-				float4 screenPos = ComputeScreenPos( ase_clipPos , _ProjectionParams.x );
-				o.ase_texcoord1 = screenPos;
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 				
+				// Convertimos la posición del vértice de objeto a espacio clip
+				float4 ase_clipPos = TransformWorldToHClip(TransformObjectToWorld(inputMesh.positionOS));
+				
+				// Calcular la posición de pantalla manualmente y normalizar a [0, 1]
+				float2 screenPos = ase_clipPos.xy / ase_clipPos.w * 0.5 + 0.5;
+				o.ase_texcoord1 = float4(screenPos, 0, 1); // Asignamos a ase_texcoord1
+				
+				// Transferimos las coordenadas de textura
 				o.ase_texcoord.xy = inputMesh.ase_texcoord.xy;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
+				// Establecemos valores para canales no usados de interpoladores y evitar advertencias de inicialización
 				o.ase_texcoord.zw = 0;
+				
+				// Definimos el valor del vértice según las condiciones
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				float3 defaultVertexValue = inputMesh.positionOS.xyz;
+				    float3 defaultVertexValue = inputMesh.positionOS.xyz;
 				#else
-				float3 defaultVertexValue = float3( 0, 0, 0 );
+				    float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
-				float3 vertexValue =  defaultVertexValue ;
+				
+				float3 vertexValue = defaultVertexValue;
+				
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				inputMesh.positionOS.xyz = vertexValue;
+				    inputMesh.positionOS.xyz = vertexValue;
 				#else
-				inputMesh.positionOS.xyz += vertexValue;
+				    inputMesh.positionOS.xyz += vertexValue;
 				#endif
-
-				inputMesh.normalOS =  inputMesh.normalOS ;
-
+				
+				// Aseguramos que la normal del objeto esté establecida correctamente
+				inputMesh.normalOS = inputMesh.normalOS;
+				
+				// Calculamos la posición en espacio mundial y clip
 				float3 positionRWS = TransformObjectToWorld(inputMesh.positionOS);
 				o.positionCS = TransformWorldToHClip(positionRWS);
+				
 				return o;
 			}
 
@@ -771,43 +794,56 @@ Shader "DF_JP_Clouds"
 			VertexOutput Vert( VertexInput inputMesh  )
 			{
 				VertexOutput o;
-				UNITY_SETUP_INSTANCE_ID( inputMesh );
-				UNITY_TRANSFER_INSTANCE_ID( inputMesh, o );
-
-				float4 ase_clipPos = TransformWorldToHClip( TransformObjectToWorld(inputMesh.positionOS));
-				float4 screenPos = ComputeScreenPos( ase_clipPos , _ProjectionParams.x );
-				o.ase_texcoord1 = screenPos;
+				UNITY_SETUP_INSTANCE_ID(inputMesh);
+				UNITY_TRANSFER_INSTANCE_ID(inputMesh, o);
 				
+				// Convertimos la posición del vértice de objeto a espacio clip
+				float4 ase_clipPos = TransformWorldToHClip(TransformObjectToWorld(inputMesh.positionOS));
+				
+				// Calcular la posición de pantalla manualmente y normalizar a [0, 1]
+				float2 screenPos = ase_clipPos.xy / ase_clipPos.w * 0.5 + 0.5;
+				o.ase_texcoord1 = float4(screenPos, 0, 1); // Asignamos a ase_texcoord1
+				
+				// Transferimos las coordenadas de textura
 				o.ase_texcoord.xy = inputMesh.ase_texcoord.xy;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
+				// Establecemos valores para canales no usados de interpoladores y evitar advertencias de inicialización
 				o.ase_texcoord.zw = 0;
+				
+				// Definimos el valor del vértice según las condiciones
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				float3 defaultVertexValue = inputMesh.positionOS.xyz;
+				    float3 defaultVertexValue = inputMesh.positionOS.xyz;
 				#else
-				float3 defaultVertexValue = float3( 0, 0, 0 );
+				    float3 defaultVertexValue = float3(0, 0, 0);
 				#endif
-				float3 vertexValue =  defaultVertexValue ;
+				
+				float3 vertexValue = defaultVertexValue;
+				
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				inputMesh.positionOS.xyz = vertexValue;
+				    inputMesh.positionOS.xyz = vertexValue;
 				#else
-				inputMesh.positionOS.xyz += vertexValue;
+				    inputMesh.positionOS.xyz += vertexValue;
 				#endif
-
-				inputMesh.normalOS =  inputMesh.normalOS ;
-
-				float2 uv = float2( 0.0, 0.0 );
-				if( unity_MetaVertexControl.x )
+				
+				// Aseguramos que la normal del objeto esté establecida correctamente
+				inputMesh.normalOS = inputMesh.normalOS;
+				
+				// Calcular UV en función de la configuración de iluminación
+				float2 uv = float2(0.0, 0.0);
+				if (unity_MetaVertexControl.x)
 				{
-					uv = inputMesh.uv1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
+				    uv = inputMesh.uv1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
 				}
-				else if( unity_MetaVertexControl.y )
+				else if (unity_MetaVertexControl.y)
 				{
-					uv = inputMesh.uv2.xy * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
+				    uv = inputMesh.uv2.xy * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
 				}
-
-				o.positionCS = float4( uv * 2.0 - 1.0, inputMesh.positionOS.z > 0 ? 1.0e-4 : 0.0, 1.0 );
+				
+				// Calcular la posición en espacio de clip basada en UV y ajustarla para HDRP
+				o.positionCS = float4(uv * 2.0 - 1.0, inputMesh.positionOS.z > 0 ? 1.0e-4 : 0.0, 1.0);
+				
 				return o;
+
 			}
 
 			float4 Frag( VertexOutput packedInput  ) : SV_Target
@@ -1015,35 +1051,51 @@ Shader "DF_JP_Clouds"
 			VertexOutput Vert( VertexInput inputMesh  )
 			{
 				VertexOutput o;
-				UNITY_SETUP_INSTANCE_ID(inputMesh);
-				UNITY_TRANSFER_INSTANCE_ID(inputMesh, o);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
-				float4 ase_clipPos = TransformWorldToHClip( TransformObjectToWorld(inputMesh.positionOS));
-				float4 screenPos = ComputeScreenPos( ase_clipPos , _ProjectionParams.x );
-				o.ase_texcoord1 = screenPos;
-				
-				o.ase_texcoord.xy = inputMesh.ase_texcoord.xy;
-				
-				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord.zw = 0;
-				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				float3 defaultVertexValue = inputMesh.positionOS.xyz;
-				#else
-				float3 defaultVertexValue = float3( 0, 0, 0 );
-				#endif
-				float3 vertexValue =   defaultVertexValue ;
-				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				inputMesh.positionOS.xyz = vertexValue;
-				#else
-				inputMesh.positionOS.xyz += vertexValue;
-				#endif
+// Setup instance ID for instancing support
+UNITY_SETUP_INSTANCE_ID(inputMesh);
+UNITY_TRANSFER_INSTANCE_ID(inputMesh, o);
+UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				inputMesh.normalOS =  inputMesh.normalOS ;
+// Transform the object's position from object space to clip space
+float4 ase_clipPos = TransformWorldToHClip(TransformObjectToWorld(inputMesh.positionOS));
 
-				float3 positionRWS = TransformObjectToWorld(inputMesh.positionOS);
-				o.positionCS = TransformWorldToHClip(positionRWS);
-				return o;
+// Compute screen position using the projection parameters
+float4 screenPos = ComputeScreenPos(ase_clipPos, _ProjectionParams.x);
+o.ase_texcoord1 = screenPos;
+
+// Transfer texture coordinates to output
+o.ase_texcoord.xy = inputMesh.ase_texcoord.xy;
+
+// Initialize unused interpolator channels to avoid warnings
+o.ase_texcoord.zw = 0;
+
+// Determine the default vertex value based on the defined macro
+#ifdef ASE_ABSOLUTE_VERTEX_POS
+    float3 defaultVertexValue = inputMesh.positionOS.xyz; // Use absolute vertex position
+#else
+    float3 defaultVertexValue = float3(0, 0, 0); // Default to zero if not absolute
+#endif
+
+float3 vertexValue = defaultVertexValue;
+
+// Update the object's position based on the defined macro
+#ifdef ASE_ABSOLUTE_VERTEX_POS
+    inputMesh.positionOS.xyz = vertexValue; // Set absolute positioning
+#else
+    inputMesh.positionOS.xyz += vertexValue; // Adjust relative positioning
+#endif
+
+// Assign normals; can be modified if needed (for example, normalization)
+inputMesh.normalOS = inputMesh.normalOS; // Keep normals unchanged
+
+// Transform the position from object space to world space
+float3 positionRWS = TransformObjectToWorld(inputMesh.positionOS);
+
+// Transform the world position to clip space
+o.positionCS = TransformWorldToHClip(positionRWS);
+
+return o; // Return the output structure
 			}
 
 			void Frag( VertexOutput packedInput
@@ -1250,34 +1302,50 @@ Shader "DF_JP_Clouds"
 			VertexOutput Vert( VertexInput inputMesh  )
 			{
 				VertexOutput o;
+
+				// Setup instance ID for instancing support
 				UNITY_SETUP_INSTANCE_ID(inputMesh);
 				UNITY_TRANSFER_INSTANCE_ID(inputMesh, o);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
-
-				float4 ase_clipPos = TransformWorldToHClip( TransformObjectToWorld(inputMesh.positionOS));
-				float4 screenPos = ComputeScreenPos( ase_clipPos , _ProjectionParams.x );
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+				
+				// Transform the object's position from object space to clip space
+				float4 ase_clipPos = TransformWorldToHClip(TransformObjectToWorld(inputMesh.positionOS));
+				
+				// Compute screen position using the projection parameters
+				float4 screenPos = ComputeScreenPos(ase_clipPos, _ProjectionParams.x);
 				o.ase_texcoord1 = screenPos;
 				
+				// Transfer texture coordinates
 				o.ase_texcoord.xy = inputMesh.ase_texcoord.xy;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
+				// Set unused interpolator channels to avoid initialization warnings
 				o.ase_texcoord.zw = 0;
+				
+				// Determine the default vertex value based on the defined macro
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				float3 defaultVertexValue = inputMesh.positionOS.xyz;
+				    float3 defaultVertexValue = inputMesh.positionOS.xyz; // Use absolute vertex position
 				#else
-				float3 defaultVertexValue = float3( 0, 0, 0 );
+				    float3 defaultVertexValue = float3(0, 0, 0); // Default to zero if not absolute
 				#endif
-				float3 vertexValue =   defaultVertexValue ;
+				
+				float3 vertexValue = defaultVertexValue;
+				
+				// Update the object's position based on the defined macro
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
-				inputMesh.positionOS.xyz = vertexValue;
+				    inputMesh.positionOS.xyz = vertexValue; // Absolute positioning
 				#else
-				inputMesh.positionOS.xyz += vertexValue;
+				    inputMesh.positionOS.xyz += vertexValue; // Relative positioning
 				#endif
-
-				inputMesh.normalOS =  inputMesh.normalOS ;
-
+				
+				// Keep the normals unchanged (you may want to modify this logic)
+				inputMesh.normalOS = inputMesh.normalOS;
+				
+				// Transform the position from object space to world space
 				float3 positionRWS = TransformObjectToWorld(inputMesh.positionOS);
+				
+				// Transform the world position to clip space
 				o.positionCS = TransformWorldToHClip(positionRWS);
+				
 				return o;
 			}
 

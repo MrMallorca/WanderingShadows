@@ -18,6 +18,8 @@ public class Ninja : MonoBehaviour
     float dashingTime = 0.1f;
     float dashingCooldown = 1f;
 
+    int abilityCounter = 2;
+
     private TrailRenderer tr;
 
     Animator anim;
@@ -81,8 +83,10 @@ public class Ninja : MonoBehaviour
     {
         if (!playerScript.isDead && canDash)
         {
-            StartCoroutine(Dash());
-
+            if (abilityCounter > 0)
+            {
+                StartCoroutine(Dash());
+            }
         }
 
     }

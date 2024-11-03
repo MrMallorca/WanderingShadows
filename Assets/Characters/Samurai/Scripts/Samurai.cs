@@ -15,6 +15,8 @@ public class Samurai : MonoBehaviour
     float deflectTime = 1f;
     float deflectCooldown = 2f;
 
+    int abilityCounter = 2;
+
     Animator anim;
     CharacterController controller;
 
@@ -47,13 +49,15 @@ public class Samurai : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
     void OnAbility(InputAction.CallbackContext ctx)
     {
         if (!playerScript.isDead && canDeflect)
         {
-            StartCoroutine(Deflect());
+            if(abilityCounter > 0)
+            {
+                StartCoroutine(Deflect());
+            }
 
         }
 
@@ -75,6 +79,7 @@ public class Samurai : MonoBehaviour
     {
         canDeflect = false;
         isDeflecting = true;
+        abilityCounter -= 1;
 
         deflectionZone.gameObject.SetActive(true);
         deflectParticle.gameObject.SetActive(true);

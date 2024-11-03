@@ -91,7 +91,6 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
             }
             
         }
-        Debug.Log(jumpCount);
 
 
         if (controller.isGrounded)
@@ -125,26 +124,11 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         }
     }
 
-
-    
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("OutOfBounds"))
-        {
-        }
-    }
-
     IEnumerator  KnockBack()
     {
         isHitted = true;
 
         StartCoroutine(Hitted());
-
-
-        //Vector2 knockBackDirection = new Vector2(transform.position.y + 3, 0);
-        //rb.velocity = new Vector2(knockBackDirection.x, knockBackUp) * knockBackForce;
-
 
         yield return new WaitForSeconds(knockbackDuration);
 

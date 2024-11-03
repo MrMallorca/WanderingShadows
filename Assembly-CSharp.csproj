@@ -60,6 +60,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enviroment\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Script\StartGame.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\AttackRangeDetection.cs" />
     <Compile Include="Assets\Characters\Ninja\Scripts\Ninja.cs" />
@@ -70,7 +71,10 @@
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyBow.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyStatic.cs" />
     <Compile Include="Assets\Script\GameLogic.cs" />
+    <Compile Include="Assets\Enviroment\Scripts\CheckPoint.cs" />
+    <Compile Include="Assets\Enviroment\Scripts\ObstacleGenerator.cs" />
     <Compile Include="Assets\Characters\Samurai\Scripts\DeflectionZone.cs" />
+    <Compile Include="Assets\Enviroment\Scripts\OutOfBounds.cs" />
     <Compile Include="Assets\Characters\PlayerScript.cs" />
     <Compile Include="Assets\Script\VirtualCamera.cs" />
     <Compile Include="Assets\DF_HD_Japan_Garden\Samples\Samples_01\High Definition RP\7.1.8\Procedural Sky\Runtime\ProceduralSky\ProceduralSky.cs" />
@@ -85,20 +89,18 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\Ciconia Studio(double-sided shader)\Shaders\Double Sided Shaders\Double Sided Emissive Diffuse.shader" />
-    <None Include="Assets\___www.unityassetcollection.com___.txt" />
-    <None Include="Assets\_www.unityassetcollection.com.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\ErbGameArt\Sword slash FX\Readme.txt" />
+    <None Include="Assets\Characters\Samurai\ErbGameArt\Sword slash FX\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\ErbGameArt\Sword slash FX\Shaders\DissolveNoise.shader" />
+    <None Include="Assets\Characters\Samurai\ErbGameArt\Sword slash FX\Shaders\DissolveNoise.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\DF_JP_WaterFadeEdges.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\DF_JP_StonesWithMoss.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\Ciconia Studio(double-sided shader)\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump Cutout.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\Water\New Post Process Volume.shader" />
-    <None Include="Assets\ErbGameArt\Sword slash FX\Shaders\Distortion.shader" />
-    <None Include="Assets\ErbGameArt\Sword slash FX\Shaders\Blend_CenterGlow.shader" />
+    <None Include="Assets\Characters\Samurai\ErbGameArt\Sword slash FX\Shaders\Distortion.shader" />
+    <None Include="Assets\Characters\Samurai\ErbGameArt\Sword slash FX\Shaders\Blend_CenterGlow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -113,7 +115,7 @@
     <None Include="Assets\DF_HD_Japan_Garden\Content Resources\df_jp\Water\DF_JP_Clouds.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\DF_HD_Japan_Garden\Samples\Samples_01\High Definition RP\7.1.8\Procedural Sky\Runtime\ProceduralSky\Resources\ProceduralSky.shader" />
-    <None Include="Assets\ErbGameArt\Sword slash FX\Shaders\Add_CenterGlow.shader" />
+    <None Include="Assets\Characters\Samurai\ErbGameArt\Sword slash FX\Shaders\Add_CenterGlow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
@@ -1129,12 +1131,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Mathematics">

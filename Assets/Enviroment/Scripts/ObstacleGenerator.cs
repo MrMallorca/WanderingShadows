@@ -20,7 +20,7 @@ public class ObstacleGenerator : MonoBehaviour
 
     private void RandomSpawner()
     {
-        Vector3 randomSpawnPosition = new Vector3(Random.Range(-20, 20), 0, 0);
+        Vector3 randomSpawnPosition = new Vector3(Random.Range(-20, 20), 0, -0.8f);
 
         Instantiate(obstacle, generatorPos + randomSpawnPosition, Quaternion.identity);
     }

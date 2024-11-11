@@ -13,6 +13,8 @@ public class DoorChangeMechanics : MonoBehaviour
     Vector3 lastPlayerPosition;
     Quaternion lastPlayerRotation;
 
+    [SerializeField] GameObject canvasVictory;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +37,17 @@ public class DoorChangeMechanics : MonoBehaviour
     {
         if(other.gameObject == lastPlayer)
         {
-            Destroy(lastPlayer);
-            Instantiate(playerToInvoke, lastPlayerPosition , lastPlayerRotation);
+            if(gameObject.name == "PuertaFinal")
+            {
+                Time.timeScale = 0f;
+                canvasVictory.SetActive(true);
+            }
+            else
+            {
+                Destroy(lastPlayer);
+                Instantiate(playerToInvoke, lastPlayerPosition, lastPlayerRotation);
+            }
+           
         }
     }
 }

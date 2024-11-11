@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -24,7 +23,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     bool isInvunerable;
     public bool isDead;
-    bool startGame = false;
+    public bool startGame;
 
 
     Animator anim;
@@ -46,11 +45,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     public bool Hit => isHitted;
     public bool Dead => isDead;
-
-    public AudioClip[] audios;
-
-    Camera camera;
-    AudioSource audioCamera;
+    public bool GameBegin => startGame;
 
 
 
@@ -64,12 +59,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     }
 
-    private void Awake()
-    {
-        camera = Camera.main;
-
-        audioCamera = camera.GetComponent<AudioSource>();
-    }
+  
 
     void Start()
     {
@@ -80,8 +70,9 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         controller = GetComponent<CharacterController>();
 
         isDead = false;
+        startGame = false;
 
-        
+
         StartCoroutine(StartGame());
 
 
@@ -156,11 +147,9 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     {
         if(gameObject.name == "Ninja")
         {
-            audioCamera.clip = audios[0];
-            yield return new WaitForSeconds(9f);
+            yield return new WaitForSeconds(7.5f);
         }
-        audioCamera.clip = audios[1];
-        audioCamera.loop = true;
+       
         startGame = true;
         anim.SetBool("startGame", true);
     }

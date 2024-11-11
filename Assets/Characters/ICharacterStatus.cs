@@ -7,5 +7,6 @@ using UnityEngine;
     {
         bool Hit { get; }
         bool Dead { get; }
+        bool GameBegin { get; }
     }
 

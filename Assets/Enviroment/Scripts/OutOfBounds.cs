@@ -15,8 +15,7 @@ public class OutOfBounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastPlayer = GameObject.FindGameObjectWithTag("Player");
-        playerCharacterController = lastPlayer.GetComponent<CharacterController>();
+        
     }
     void Awake()
     {
@@ -31,6 +30,8 @@ public class OutOfBounds : MonoBehaviour
 
     private void Update()
     {
+        lastPlayer = GameObject.FindGameObjectWithTag("Player");
+        playerCharacterController = lastPlayer.GetComponent<CharacterController>();
     }
 
     public void NotifyCheckPointTriggered(CheckPoint checkPoint)

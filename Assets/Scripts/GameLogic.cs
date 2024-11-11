@@ -18,9 +18,20 @@ public class GameLogic : MonoBehaviour
 
     public List<ICharacterStatus> characters;
 
+    public AudioClip[] audios;
 
-  
+    Camera camera;
+    AudioSource audioCamera;
 
+    bool isPlayingGameBeginAudio = false;
+
+
+    private void Awake()
+    {
+        camera = Camera.main;
+
+        audioCamera = camera.GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +39,9 @@ public class GameLogic : MonoBehaviour
 
         characters = new List<ICharacterStatus>(FindObjectsOfType<MonoBehaviour>().
             OfType<ICharacterStatus>());
+
+        StartCoroutine(PlayMusic(audios[0]));
+
 
     }
 
@@ -52,6 +66,12 @@ public class GameLogic : MonoBehaviour
                 StartCoroutine(ReloadScene());
 
             }
+            //if(character.GameBegin && !isPlayingGameBeginAudio) 
+            //{
+            //    audioCamera.loop = true;
+            //    StartCoroutine(PlayMusic(audios[1]));
+
+            //}
         }
 
 
@@ -70,6 +90,14 @@ public class GameLogic : MonoBehaviour
     {
         Time.timeScale = 0f;
         canvasPause.SetActive(true);
+    }
+
+    IEnumerator PlayMusic(AudioClip audioClip)
+    {
+        //audioCamera.Stop();
+        //audioCamera.clip = audioClip;
+        audioCamera.PlayOneShot(audioClip);
+        yield return null;
     }
    
 }

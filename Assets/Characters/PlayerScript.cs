@@ -47,7 +47,12 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     public bool Hit => isHitted;
     public bool Dead => isDead;
 
-    
+    public AudioClip[] audios;
+
+    Camera camera;
+    AudioSource audioCamera;
+
+
 
     private void OnEnable()
     {
@@ -57,6 +62,13 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         jump.action.performed += OnJump;
         jump.action.canceled += OnJump;
 
+    }
+
+    private void Awake()
+    {
+        camera = Camera.main;
+
+        audioCamera = camera.GetComponent<AudioSource>();
     }
 
     void Start()
@@ -71,7 +83,10 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         
         StartCoroutine(StartGame());
+
+
         
+
     }
 
     // Update is called once per frame
@@ -141,8 +156,11 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     {
         if(gameObject.name == "Ninja")
         {
-            yield return new WaitForSeconds(4);
+            audioCamera.clip = audios[0];
+            yield return new WaitForSeconds(9f);
         }
+        audioCamera.clip = audios[1];
+        audioCamera.loop = true;
         startGame = true;
         anim.SetBool("startGame", true);
     }

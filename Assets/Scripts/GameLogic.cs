@@ -18,6 +18,9 @@ public class GameLogic : MonoBehaviour
 
     public List<ICharacterStatus> characters;
 
+
+  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,6 @@ public class GameLogic : MonoBehaviour
 
         characters = new List<ICharacterStatus>(FindObjectsOfType<MonoBehaviour>().
             OfType<ICharacterStatus>());
-
 
     }
 

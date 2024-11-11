@@ -800,5 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f6c8281dfbcb346abab09c8688a4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTime: 0
   arrowPrefab: {fileID: 2647537435381696020, guid: 3e35927c28620a54c9330f8b7aab4b8e, type: 3}
   isInRange: 0

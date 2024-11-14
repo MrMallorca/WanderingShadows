@@ -12,6 +12,8 @@ public class CanvasOptions : MonoBehaviour
     [SerializeField] Button options;
     [SerializeField] Button mainMenu;
 
+    private string escenaACambiar;
+
     private void OnEnable()
     {
         resume.onClick.AddListener(ResumeGame);
@@ -35,12 +37,14 @@ public class CanvasOptions : MonoBehaviour
 
     public void OptionsMenu()
     {
-
+        //escenaACambiar = "MainMenu";
+        //SceneManager.LoadScene(escenaACambiar);
     }
 
     public void BackToMainMenu() 
     {
-        SceneManager.LoadScene("MainMenu2");
+        escenaACambiar = "MainMenu";
+        SceneManager.LoadScene(escenaACambiar);
     }
 
    

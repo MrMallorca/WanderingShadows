@@ -15,12 +15,19 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] Button geishaWayBtn;
     [SerializeField] Button back;
 
+
     [SerializeField] Animator crossfadeAnim;
     private float transitionTime = 1f;
     private string escenaACambiar;
 
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+
+
+    }
     void Start()
     {
         ninjaWayBtn.onClick.AddListener(LoadNinjaLevel);
@@ -41,6 +48,7 @@ public class LevelSelector : MonoBehaviour
 
     public void LoadNinjaLevel()
     {
+
         escenaACambiar = "Level1";
         StartCoroutine(LoadLevel(escenaACambiar));
     }
@@ -66,9 +74,14 @@ public class LevelSelector : MonoBehaviour
     {
         crossfadeAnim.SetTrigger("Start");
 
+
         yield return new WaitForSeconds(transitionTime);
 
+
         SceneManager.LoadScene(levelName);
+
+
+
     }
 
     IEnumerator BlinkText()

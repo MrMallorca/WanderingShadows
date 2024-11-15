@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PlayerPrefsEditor.EditorResources", "Unity.PlayerPrefsEditor.EditorResources.csproj", "{A4C89D35-0550-6425-DA52-0D424C9BAD5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{880A1934-6700-C112-E4F5-7F63B54F521B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PlayerPrefsEditor.Samples.SampleScene", "Unity.PlayerPrefsEditor.Samples.SampleScene.csproj", "{0518116E-389B-B63C-CBD8-CDF361E7964D}"
 EndProject
 Global
@@ -29,10 +27,6 @@ Global
 		{A4C89D35-0550-6425-DA52-0D424C9BAD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4C89D35-0550-6425-DA52-0D424C9BAD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4C89D35-0550-6425-DA52-0D424C9BAD5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{880A1934-6700-C112-E4F5-7F63B54F521B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{880A1934-6700-C112-E4F5-7F63B54F521B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{880A1934-6700-C112-E4F5-7F63B54F521B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{880A1934-6700-C112-E4F5-7F63B54F521B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0518116E-389B-B63C-CBD8-CDF361E7964D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0518116E-389B-B63C-CBD8-CDF361E7964D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0518116E-389B-B63C-CBD8-CDF361E7964D}.Release|Any CPU.ActiveCfg = Release|Any CPU

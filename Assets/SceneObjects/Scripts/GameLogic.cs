@@ -16,14 +16,13 @@ public class GameLogic : MonoBehaviour
 
     [SerializeField] GameObject canvasPause;
 
-    public List<ICharacterStatus> characters;
+    //public List<ICharacterStatus> characters;
 
     public AudioClip[] audios;
 
     Camera camera;
     AudioSource audioCamera;
 
-    bool isPlayingGameBeginAudio = false;
 
 
     private void Awake()
@@ -37,10 +36,7 @@ public class GameLogic : MonoBehaviour
     {
         escenaACambiar = "Level1";
 
-        characters = new List<ICharacterStatus>(FindObjectsOfType<MonoBehaviour>().
-            OfType<ICharacterStatus>());
-
-        StartCoroutine(PlayMusic(audios[0]));
+        PlayMusic(audios[0]);
 
 
     }
@@ -49,31 +45,22 @@ public class GameLogic : MonoBehaviour
     void Update()
     {
       
-        foreach (var character in characters)
-        {
-            if (character.Hit)
+            if (PlayerScript.currentPlayer.Hit)
             {
                 vidas = Mathf.Clamp(vidas - 1, 0, healthSprites.Length - 1);
                 healthBar.sprite = healthSprites[vidas];
 
-                (character as PlayerScript).isHitted = false;
+                PlayerScript.currentPlayer.isHitted = false;
 
             }
 
-            if (character.Dead)
+            if (PlayerScript.currentPlayer.Dead)
             {
-                (character as PlayerScript).isDead = true;
+                PlayerScript.currentPlayer.isDead = true;
                 StartCoroutine(ReloadScene());
 
             }
-            //if(character.GameBegin && !isPlayingGameBeginAudio) 
-            //{
-            //    audioCamera.loop = true;
-            //    StartCoroutine(PlayMusic(audios[1]));
-
-            //}
-        }
-
+           
 
     }
 
@@ -92,12 +79,11 @@ public class GameLogic : MonoBehaviour
         canvasPause.SetActive(true);
     }
 
-    IEnumerator PlayMusic(AudioClip audioClip)
+    public void PlayMusic(AudioClip audioClip)
     {
         //audioCamera.Stop();
         //audioCamera.clip = audioClip;
         audioCamera.PlayOneShot(audioClip);
-        yield return null;
     }
    
 }

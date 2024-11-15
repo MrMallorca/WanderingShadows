@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuertaFinal
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c768827f5f1fe944f978590eb8e96441, type: 3}
+      propertyPath: m_TagString
+      value: PuertaFinal
+      objectReference: {fileID: 0}
     - target: {fileID: 1113159787684296918, guid: c768827f5f1fe944f978590eb8e96441, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -126,3 +130,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToInvoke: {fileID: 10436536298871782, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}
+  canvasVictory: {fileID: 0}

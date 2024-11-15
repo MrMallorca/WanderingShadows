@@ -44,10 +44,13 @@ public class OutOfBounds : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider col)
     {
-        playerCharacterController.enabled = false;
-        lastPlayer.transform.position =
-                lastCheckPoint.transform.position;
-        playerCharacterController.enabled = true;
+        if(col.gameObject ==  lastPlayer)
+        {
+            playerCharacterController.enabled = false;
+            lastPlayer.transform.position =
+                    lastCheckPoint.transform.position;
+            playerCharacterController.enabled = true;
+        }
 
     }
 }

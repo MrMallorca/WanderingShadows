@@ -10,7 +10,6 @@ public class StartGame : MonoBehaviour
 {
     private string escenaACargar = "MainMenu";
     [SerializeField] InputActionReference start;
-    bool cargarEscena = false;
 
     [SerializeField] TextMeshProUGUI text;
 

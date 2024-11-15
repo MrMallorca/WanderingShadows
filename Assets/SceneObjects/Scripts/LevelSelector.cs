@@ -55,7 +55,7 @@ public class LevelSelector : MonoBehaviour
 
     public void LoadSamuraiLevel()
     {
-        escenaACambiar = "Level1";
+        escenaACambiar = "Level2";
         StartCoroutine(LoadLevel(escenaACambiar));
     }
     public void LoadGeishaLevel()

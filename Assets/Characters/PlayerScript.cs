@@ -10,12 +10,11 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour, ICharacterStatus
 {
+    public static PlayerScript currentPlayer;
+
     public float speed;
 
    
-
-    [SerializeField] GameObject healthBarObj;
-
     public float knockBackForce = 10f;
     public float knockBackUp = 2f;
     float knockbackDuration = 0.2f;
@@ -27,9 +26,6 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
 
     Animator anim;
-
-    string escenaACambiar = "Level1";
-
 
     CharacterController controller;
 
@@ -63,6 +59,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     void Start()
     {
+        currentPlayer = this;
 
 
         anim = GetComponent<Animator>();
@@ -139,6 +136,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         yield return new WaitForSeconds(knockbackDuration);
 
         isInvunerable = false;
+        isHitted = false;
 
 
     }

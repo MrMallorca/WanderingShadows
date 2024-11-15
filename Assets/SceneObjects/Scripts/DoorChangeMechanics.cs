@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class DoorChangeMechanics : MonoBehaviour
 {
-    BoxCollider doorCollider;
 
     [SerializeField] GameObject playerToInvoke;
     GameObject lastPlayer;
@@ -20,8 +19,9 @@ public class DoorChangeMechanics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doorCollider = GetComponent<BoxCollider>();
         lastPlayer = GameObject.FindWithTag("Player");
+
+
     }
 
     // Update is called once per frame
@@ -38,11 +38,9 @@ public class DoorChangeMechanics : MonoBehaviour
     {
         if(other.gameObject == lastPlayer)
         {
-            if(gameObject.name == "PuertaFinal")
+            if(gameObject.CompareTag("PuertaFinal"))
             {
-                Time.timeScale = 0f;
-                canvasVictory.SetActive(true);
-                SceneManager.LoadScene("Level1");
+                StartCoroutine(LoadNextLevel());
             }
             else
             {
@@ -51,5 +49,14 @@ public class DoorChangeMechanics : MonoBehaviour
             }
            
         }
+    }
+
+    IEnumerator LoadNextLevel()
+    {
+        canvasVictory.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Level2");
     }
 }

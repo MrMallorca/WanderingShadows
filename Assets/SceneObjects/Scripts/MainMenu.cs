@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 
 
-#if UNITY_EDITOR
-using UnityEditor; // Necesario para detener el juego en el Editor
-#endif
+
 
 public class MainMenu : MonoBehaviour
 {
@@ -42,7 +40,11 @@ public class MainMenu : MonoBehaviour
     public void ExitGame()
     {
        Application.Quit();
-       EditorApplication.isPlaying = false;
+
+    #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+
+    #endif
     }
 
     public void OnOptionsButtonClicked()

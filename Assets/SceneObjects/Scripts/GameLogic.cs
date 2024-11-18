@@ -35,7 +35,8 @@ public class GameLogic : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name == "Level1")
         {
-            PlayMusic(audios[0]);
+            StartCoroutine(PlayMusic(audios[0],0f,false));
+            StartCoroutine(PlayMusic(audios[1], audios[0].length ,true));
         }
 
 
@@ -58,6 +59,7 @@ public class GameLogic : MonoBehaviour
                 StartCoroutine(ReloadScene());
 
             }
+
         healthBar.sprite = healthSprites[vidas];
 
 
@@ -86,11 +88,24 @@ public class GameLogic : MonoBehaviour
         canvasPause.SetActive(true);
     }
 
-    public void PlayMusic(AudioClip audioClip)
+    //public void PlayMusic(AudioClip audioClip)
+    //{
+    //    audioCamera.PlayOneShot(audioClip);
+    //}
+
+    IEnumerator PlayMusic(AudioClip audioClip, float time, bool loop)
     {
-        //audioCamera.Stop();
-        //audioCamera.clip = audioClip;
-        audioCamera.PlayOneShot(audioClip);
+        yield return new WaitForSeconds(time);
+        audioCamera.clip = audioClip;
+        if(!loop)
+        {
+            audioCamera.Play();
+        }
+        else
+        {
+            audioCamera.PlayOneShot(audioClip);
+        }
+
     }
-   
+
 }

@@ -29,7 +29,7 @@ public class ObstacleGenerator : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            InvokeRepeating("RandomSpawner", 0f, 0.5f);
+            InvokeRepeating("RandomSpawner", 0f, 1.5f);
         }
 
     }

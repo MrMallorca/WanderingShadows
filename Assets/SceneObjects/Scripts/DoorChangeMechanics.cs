@@ -44,8 +44,13 @@ public class DoorChangeMechanics : MonoBehaviour
             }
             else
             {
-                Destroy(lastPlayer);
-                Instantiate(playerToInvoke, lastPlayerPosition, lastPlayerRotation);
+                if(playerToInvoke != lastPlayer) 
+                {
+                    Destroy(lastPlayer);
+                    Instantiate(playerToInvoke, lastPlayerPosition, lastPlayerRotation);
+                }
+               
+               
             }
            
         }

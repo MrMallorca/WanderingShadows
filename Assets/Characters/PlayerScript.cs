@@ -44,7 +44,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     public bool GameBegin => startGame;
 
 
-
+    public float verticalVelocityOnGrounded = -1f;
     private void OnEnable()
     {
 
@@ -97,7 +97,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         if (controller.isGrounded)
         {
             jumpCount = 0;
-            verticalVelocity = 0;
+            verticalVelocity = verticalVelocityOnGrounded;
         }
 
         if (GameLogic.vidas <= 0 && isDead == false) 

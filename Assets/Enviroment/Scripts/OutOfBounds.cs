@@ -47,7 +47,7 @@ public class OutOfBounds : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider col)
     {
-        if(lastCheckPoint == null) 
+        if(col.gameObject == lastPlayer && lastCheckPoint == null) 
         {
             StartCoroutine(gameLogicS.ReloadScene());
         }

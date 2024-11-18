@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OutOfBounds : MonoBehaviour
 {
@@ -10,7 +12,8 @@ public class OutOfBounds : MonoBehaviour
     [SerializeField] GameObject lastPlayer;
     [SerializeField] CheckPoint lastCheckPoint;
     CharacterController playerCharacterController;
-     
+
+    [SerializeField] GameLogic gameLogicS;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +47,11 @@ public class OutOfBounds : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject ==  lastPlayer)
+        if(lastCheckPoint == null) 
+        {
+            StartCoroutine(gameLogicS.ReloadScene());
+        }
+        else if (col.gameObject ==  lastPlayer)
         {
             playerCharacterController.enabled = false;
             lastPlayer.transform.position =

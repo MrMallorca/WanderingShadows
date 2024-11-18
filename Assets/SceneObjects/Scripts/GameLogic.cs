@@ -12,12 +12,9 @@ public class GameLogic : MonoBehaviour
     public Sprite[] healthSprites;
     public Image healthBar;
 
-    string escenaACambiar;
-
     [SerializeField] GameObject canvasPause;
 
-    //public List<ICharacterStatus> characters;
-
+    string escenaACambiar;
     public AudioClip[] audios;
 
     Camera camera;
@@ -34,9 +31,12 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        escenaACambiar = "Level1";
+        escenaACambiar = SceneManager.GetActiveScene().name;
 
-        PlayMusic(audios[0]);
+        if(SceneManager.GetActiveScene().name == "Level1")
+        {
+            PlayMusic(audios[0]);
+        }
 
 
     }
@@ -48,7 +48,6 @@ public class GameLogic : MonoBehaviour
             if (PlayerScript.currentPlayer.Hit)
             {
                 vidas = Mathf.Clamp(vidas - 1, 0, healthSprites.Length - 1);
-                healthBar.sprite = healthSprites[vidas];
 
                 PlayerScript.currentPlayer.isHitted = false;
 
@@ -56,23 +55,31 @@ public class GameLogic : MonoBehaviour
 
             if (PlayerScript.currentPlayer.Dead)
             {
-                PlayerScript.currentPlayer.isDead = true;
                 StartCoroutine(ReloadScene());
 
             }
-           
+        healthBar.sprite = healthSprites[vidas];
+
 
     }
 
 
-    
-    IEnumerator ReloadScene()
+
+    public IEnumerator ReloadScene()
     {
-        yield return new WaitForSeconds(3.29f);
-        SceneManager.LoadScene(escenaACambiar);
+        if(vidas == 0) 
+        {
+            yield return new WaitForSeconds(3.29f);
+            vidas = 2;
+            SceneManager.LoadScene(escenaACambiar);
+
+        }
+        else
+        {
+            SceneManager.LoadScene(escenaACambiar);
+        }
 
     }
-
     public void PauseMenu()
     {
         Time.timeScale = 0f;

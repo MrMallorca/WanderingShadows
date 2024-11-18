@@ -72,7 +72,6 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         StartCoroutine(StartGame());
 
-
         
 
     }
@@ -83,14 +82,13 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (startGame == true )
         {
-            if(!isInvunerable && isDead == false )
+            if(isDead == false )
             {
+
                 Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime + 
-                    Vector3.up * verticalVelocity * Time.deltaTime;
+                  Vector3.up * verticalVelocity * Time.deltaTime;
                 controller.Move(movement);
-
-
-                
+ 
             }
             
         }
@@ -147,7 +145,11 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         {
             yield return new WaitForSeconds(7.5f);
         }
-       
+        else if(gameObject.name == "Samurai")
+        {
+            yield return new WaitForSeconds(2.8f);
+        }
+
         startGame = true;
         anim.SetBool("startGame", true);
     }
@@ -181,7 +183,8 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (ctx.performed && startGame)
         {
-            if (gameObject.name == "Samurai(Clone)")
+            if (gameObject.name == "Samurai(Clone)" 
+                || gameObject.name == "Samurai")
             {
                 if (jumpCount < 2)
                 {

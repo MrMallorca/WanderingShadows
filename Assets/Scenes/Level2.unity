@@ -7079,7 +7079,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0010751745, y: -0.02171738, z: 0.000930627, w: -0.9997632}
-  m_LocalPosition: {x: -111.37422, y: 4.1519027, z: -9.970545}
+  m_LocalPosition: {x: -130.81322, y: 5.0689025, z: -9.970545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7257,7 +7257,7 @@ AudioSource:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: a35c78441097bf340bf3b6faed45c132, type: 2}
+  OutputAudioMixerGroup: {fileID: -9177794537557168733, guid: a35c78441097bf340bf3b6faed45c132, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -7417,7 +7417,7 @@ Transform:
   m_GameObject: {fileID: 977944194}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0010751745, y: -0.02171738, z: 0.000930627, w: -0.9997632}
-  m_LocalPosition: {x: -111.37422, y: 4.1519027, z: -9.970545}
+  m_LocalPosition: {x: -130.81322, y: 5.0689025, z: -9.970545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9041,9 +9041,8 @@ MonoBehaviour:
   healthBar: {fileID: 4193508798021086471}
   canvasPause: {fileID: 7398715206603445667}
   audios:
-  - {fileID: 8300000, guid: a3a3af8760281734580a42fcfa24189d, type: 3}
-  - {fileID: 8300000, guid: 73408c7acd867034ea0e53b7ac9c0af1, type: 3}
-  - {fileID: 8300000, guid: 11babaf64b2b97c4aa77f9bd5a4608f1, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 691df1c1cab83694c82bec244164fc27, type: 3}
 --- !u!4 &1240002795
 Transform:
   m_ObjectHideFlags: 0
@@ -9486,7 +9485,7 @@ Transform:
   m_GameObject: {fileID: 1282454039}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -115.38, y: 2.2, z: -1.1}
+  m_LocalPosition: {x: -134.819, y: 3.117, z: -1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11577,14 +11576,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776379095617041638, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}
       propertyPath: clips.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1776379095617041638, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 76bf60291a9311242a56c6e062261539, type: 3}
     - target: {fileID: 1776379095617041638, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}
       propertyPath: clips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 11babaf64b2b97c4aa77f9bd5a4608f1, type: 3}
     - target: {fileID: 1776379095617041638, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}
       propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9ffde28880c2d8408c96597d0a5f213, type: 3}
+    - target: {fileID: 1776379095617041638, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}
+      propertyPath: clips.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: b516fb4900407414aad73f609ec765f4, type: 3}
     - target: {fileID: 2030167031156621557, guid: 62d4be1db408e48428cfe02ffd99e14f, type: 3}

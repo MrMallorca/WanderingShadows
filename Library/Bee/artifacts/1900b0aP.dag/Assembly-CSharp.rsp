@@ -334,8 +334,6 @@
 "Assets/Characters/PlayerScript.cs"
 "Assets/Characters/Samurai/Scripts/DeflectionZone.cs"
 "Assets/Characters/Samurai/Scripts/Samurai.cs"
-"Assets/DF_HD_Japan_Garden/Samples/Samples_01/High Definition RP/7.1.8/Procedural Sky/Runtime/ProceduralSky/ProceduralSky.cs"
-"Assets/DF_HD_Japan_Garden/Samples/Samples_01/High Definition RP/7.1.8/Procedural Sky/Runtime/ProceduralSky/ProceduralSkyRenderer.cs"
 "Assets/Enviroment/Scripts/CheckPoint.cs"
 "Assets/Enviroment/Scripts/Obstacle.cs"
 "Assets/Enviroment/Scripts/ObstacleGenerator.cs"

@@ -20,6 +20,8 @@ public class GameLogic : MonoBehaviour
     Camera camera;
     AudioSource audioCamera;
 
+    bool isPaused = false;
+
 
 
     private void Awake()
@@ -33,10 +35,18 @@ public class GameLogic : MonoBehaviour
     {
         escenaACambiar = SceneManager.GetActiveScene().name;
 
-       
-        StartCoroutine(PlayMusic(audios[0],0f,false));
-        StartCoroutine(PlayMusic(audios[1], audios[0].length ,true));
-        
+        if(escenaACambiar == "Level1")
+        {
+            StartCoroutine(PlayMusic(audios[0], 0f, false));
+            StartCoroutine(PlayMusic(audios[1], audios[0].length + 1, true));
+
+        }
+        else
+        {
+            StartCoroutine(PlayMusic(audios[1], 0f, true));
+
+        }
+
 
 
     }
@@ -61,9 +71,22 @@ public class GameLogic : MonoBehaviour
 
         healthBar.sprite = healthSprites[vidas];
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseMenu();
+            }
 
+            isPaused = !isPaused;
+
+
+        }
     }
-
 
 
     public IEnumerator ReloadScene()
@@ -83,8 +106,15 @@ public class GameLogic : MonoBehaviour
     }
     public void PauseMenu()
     {
+        audioCamera.Pause();
         Time.timeScale = 0f;
         canvasPause.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        audioCamera.Play();
+        Time.timeScale = 1f;
+        canvasPause.SetActive(false);
     }
 
 
@@ -92,9 +122,10 @@ public class GameLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         audioCamera.clip = audioClip;
-        if(!loop)
+        if(loop)
         {
             audioCamera.Play();
+            audioCamera.loop = loop;
         }
         else
         {

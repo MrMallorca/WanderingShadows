@@ -125,8 +125,11 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     {
         if (hit.gameObject.CompareTag("Damageable"))
         {
-            audio.clip = clips[0];
-            audio.Play();
+            if(GameLogic.vidas >= 0)
+            {
+                audio.PlayOneShot(clips[2]);
+
+            }
             StartCoroutine(KnockBack());
             
 
@@ -196,7 +199,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
             {
                 if (jumpCount < 2)
                 {
-
+                    audio.PlayOneShot(clips[0]);
                     verticalVelocity = jumpForce;
 
                     jumpCount++;

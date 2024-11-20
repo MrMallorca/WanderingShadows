@@ -43,7 +43,7 @@ public class StartGame : MonoBehaviour
 
             text.text = " ";
             yield return new WaitForSeconds(0.5f);
-            text.text = "-PRESS START-";
+            text.text = "-PRESS ANY BUTTON-";
             yield return new WaitForSeconds(0.5f);
         }
     }

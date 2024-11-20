@@ -81,8 +81,8 @@ public class Samurai : MonoBehaviour
 
     private IEnumerator Deflect()
     {
-        audio.clip = playerScript.clips[2];
-        audio.PlayOneShot(playerScript.clips[2]);
+        audio.clip = playerScript.clips[3];
+        audio.PlayOneShot(playerScript.clips[3]);
         canDeflect = false;
         isDeflecting = true;
         abilityCounter -= 1;

@@ -24,8 +24,13 @@ public class Samurai : MonoBehaviour
     PlayerScript playerScript;
 
     [SerializeField] GameObject deflectParticle;
+
+    AudioSource audio;
+
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
 
@@ -76,6 +81,8 @@ public class Samurai : MonoBehaviour
 
     private IEnumerator Deflect()
     {
+        audio.clip = playerScript.clips[2];
+        audio.PlayOneShot(playerScript.clips[2]);
         canDeflect = false;
         isDeflecting = true;
         abilityCounter -= 1;

@@ -44,7 +44,10 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     public bool GameBegin => startGame;
 
 
-    public float verticalVelocityOnGrounded = -1f;
+    float verticalVelocityOnGrounded = -1f;
+
+    AudioSource audio;
+    public AudioClip[] clips;
     private void OnEnable()
     {
 
@@ -61,6 +64,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     {
         currentPlayer = this;
 
+        audio = GetComponent<AudioSource>();
 
         anim = GetComponent<Animator>();
 
@@ -102,6 +106,8 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (GameLogic.vidas <= 0 && isDead == false) 
         {
+            audio.clip = clips[1];
+            audio.PlayOneShot(clips[1]);
             isDead = true;
             anim.SetTrigger("isDead");
         }
@@ -119,6 +125,8 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
     {
         if (hit.gameObject.CompareTag("Damageable"))
         {
+            audio.clip = clips[0];
+            audio.Play();
             StartCoroutine(KnockBack());
             
 

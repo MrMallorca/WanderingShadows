@@ -33,11 +33,10 @@ public class GameLogic : MonoBehaviour
     {
         escenaACambiar = SceneManager.GetActiveScene().name;
 
-        if(SceneManager.GetActiveScene().name == "Level1")
-        {
-            StartCoroutine(PlayMusic(audios[0],0f,false));
-            StartCoroutine(PlayMusic(audios[1], audios[0].length ,true));
-        }
+       
+        StartCoroutine(PlayMusic(audios[0],0f,false));
+        StartCoroutine(PlayMusic(audios[1], audios[0].length ,true));
+        
 
 
     }
@@ -88,10 +87,6 @@ public class GameLogic : MonoBehaviour
         canvasPause.SetActive(true);
     }
 
-    //public void PlayMusic(AudioClip audioClip)
-    //{
-    //    audioCamera.PlayOneShot(audioClip);
-    //}
 
     IEnumerator PlayMusic(AudioClip audioClip, float time, bool loop)
     {

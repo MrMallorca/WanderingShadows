@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LoadScene.unity
+    guid: d64c495fb151ace43a23a733f8e1ce47
+  - enabled: 1
     path: Assets/Scenes/SplashCompany.unity
     guid: 20108a5d0e5e5bd4ca18b6bf8d92bbdd
   - enabled: 1
@@ -22,6 +25,6 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: aebaa51ec8072cc4fa2b63dd1cc698be
+    guid: 7d69afaa02b0dd846b46542ed10422ce
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 69079a1e68b8b5049b12e6ad464978c8, type: 2}

@@ -112,7 +112,7 @@ public class GameLogic : MonoBehaviour
     }
     public void ResumeGame()
     {
-        audioCamera.Play();
+        audioCamera.UnPause();
         Time.timeScale = 1f;
         canvasPause.SetActive(false);
     }

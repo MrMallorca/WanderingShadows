@@ -3,52 +3,40 @@
   "WorkspaceRootPath": "D:\\EduDelgado\\WanderingShadows\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\characters\\samurai\\scripts\\samurai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\samurai\\scripts\\samurai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\characters\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\enviroment\\scripts\\obstaclegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\enviroment\\scripts\\obstaclegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\characters\\ninja\\scripts\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\ninja\\scripts\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\enviroment\\scripts\\outofbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\enviroment\\scripts\\outofbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\characters\\ninja\\scripts\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\ninja\\scripts\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\enviroment\\scripts\\outofbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\enviroment\\scripts\\outofbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\enviroment\\scripts\\obstaclegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\enviroment\\scripts\\obstaclegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\characters\\enemies\\scripts\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\enemies\\scripts\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\characters\\samurai\\scripts\\samurai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\samurai\\scripts\\samurai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\characters\\icharacterstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\icharacterstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\enviroment\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\enviroment\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\sceneobjects\\scripts\\levelselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\levelselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,11 +46,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "StartGame.cs",
+              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\StartGame.cs",
+              "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
+              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\StartGame.cs",
+              "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T13:11:02.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DoorChangeMechanics.cs",
+              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
+              "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
+              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
+              "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T11:39:50.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ObstacleGenerator.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Enviroment\\Scripts\\ObstacleGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Enviroment\\Scripts\\ObstacleGenerator.cs",
@@ -70,12 +92,11 @@
               "RelativeToolTip": "Assets\\Enviroment\\Scripts\\ObstacleGenerator.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:24:43.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:24:43.306Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Arrow.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\Enemies\\Scripts\\Arrow.cs",
               "RelativeDocumentMoniker": "Assets\\Characters\\Enemies\\Scripts\\Arrow.cs",
@@ -87,13 +108,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "OutOfBounds.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Enviroment\\Scripts\\OutOfBounds.cs",
               "RelativeDocumentMoniker": "Assets\\Enviroment\\Scripts\\OutOfBounds.cs",
               "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\Enviroment\\Scripts\\OutOfBounds.cs",
               "RelativeToolTip": "Assets\\Enviroment\\Scripts\\OutOfBounds.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwDEAAAArAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T09:44:35.246Z",
               "EditorCaption": ""
@@ -106,7 +127,7 @@
               "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\GameLogic.cs",
               "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\GameLogic.cs",
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\GameLogic.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwCYAAABBAAAA",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAtwCYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T08:04:26.253Z",
               "EditorCaption": ""
@@ -119,39 +140,14 @@
               "RelativeDocumentMoniker": "Assets\\Characters\\PlayerScript.cs",
               "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\PlayerScript.cs",
               "RelativeToolTip": "Assets\\Characters\\PlayerScript.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAAwC4AAAAxAAAA",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAEwIEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T22:07:57.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DoorChangeMechanics.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
-              "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
-              "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA1wC4AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T08:29:11.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CheckPoint.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Enviroment\\Scripts\\CheckPoint.cs",
-              "RelativeDocumentMoniker": "Assets\\Enviroment\\Scripts\\CheckPoint.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\Enviroment\\Scripts\\CheckPoint.cs",
-              "RelativeToolTip": "Assets\\Enviroment\\Scripts\\CheckPoint.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T08:20:14.16Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Ninja.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\Ninja\\Scripts\\Ninja.cs",
               "RelativeDocumentMoniker": "Assets\\Characters\\Ninja\\Scripts\\Ninja.cs",
@@ -164,51 +160,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StartGame.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\StartGame.cs",
-              "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\StartGame.cs",
-              "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T00:02:18.78Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LevelSelector.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\LevelSelector.cs",
-              "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\LevelSelector.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\LevelSelector.cs",
-              "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\LevelSelector.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwDkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T13:10:35.797Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ICharacterStatus.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\ICharacterStatus.cs",
-              "RelativeDocumentMoniker": "Assets\\Characters\\ICharacterStatus.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\ICharacterStatus.cs",
-              "RelativeToolTip": "Assets\\Characters\\ICharacterStatus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T08:26:20.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Samurai.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
               "RelativeDocumentMoniker": "Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
               "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
               "RelativeToolTip": "Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwAsAAAAVAAAAAAAAAA==",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwFQAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T11:53:34.528Z"
+              "WhenOpened": "2024-11-15T11:53:34.528Z",
+              "EditorCaption": ""
             }
           ]
         }

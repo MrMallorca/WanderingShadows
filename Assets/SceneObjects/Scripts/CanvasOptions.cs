@@ -14,12 +14,24 @@ public class CanvasOptions : MonoBehaviour
 
     private string escenaACambiar;
 
+    [SerializeField] GameObject canvasOptions;
+
+    CanvasGroup interactableCanvas;
+
+    AudioSource camSound;
     private void OnEnable()
     {
         resume.onClick.AddListener(ResumeGame);
         options.onClick.AddListener(OptionsMenu);
         mainMenu.onClick.AddListener(BackToMainMenu);
 
+
+    }
+
+    private void Start()
+    {
+        interactableCanvas = GetComponent<CanvasGroup>();
+        camSound = Camera.main.GetComponent<AudioSource>();
 
     }
 
@@ -32,13 +44,14 @@ public class CanvasOptions : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        camSound.UnPause();
         gameObject.SetActive(false);
     }
 
     public void OptionsMenu()
     {
-        //escenaACambiar = "MainMenu";
-        //SceneManager.LoadScene(escenaACambiar);
+        interactableCanvas.interactable = false;
+        canvasOptions.SetActive(true);
     }
 
     public void BackToMainMenu() 

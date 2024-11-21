@@ -106,9 +106,8 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (GameLogic.vidas <= 0 && isDead == false) 
         {
-            audio.clip = clips[1];
-            audio.PlayOneShot(clips[1]);
             isDead = true;
+            audio.PlayOneShot(clips[1]);
             anim.SetTrigger("isDead");
         }
 
@@ -123,13 +122,12 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("Damageable"))
+        if (hit.gameObject.CompareTag("Damageable") && !isDead)
         {
-            if(GameLogic.vidas >= 0)
-            {
-                audio.PlayOneShot(clips[2]);
+            
+            audio.PlayOneShot(clips[2]);
 
-            }
+            
             StartCoroutine(KnockBack());
             
 

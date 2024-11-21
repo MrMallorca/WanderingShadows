@@ -17,8 +17,14 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] GameObject canvasOptions;
 
+    CanvasGroup interactableCanvas;
+
     private string escenaACambiar = "MenuSelector";
-    // Start is called before the first frame update
+
+    private void Start()
+    {
+        interactableCanvas = GetComponent<CanvasGroup>();
+    }
     private void OnEnable()
     {
         play.onClick.AddListener(PlayGame);
@@ -49,7 +55,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnOptionsButtonClicked()
     {
+        interactableCanvas.interactable = false;
         canvasOptions.SetActive(true);
-        gameObject.SetActive(false);
     }
 }

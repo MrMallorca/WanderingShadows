@@ -48,7 +48,7 @@ public class StartGame : MonoBehaviour
         }
     }
 
-    void onStartGame(InputAction.CallbackContext ctx)
+    public void onStartGame(InputAction.CallbackContext ctx)
     {
         SceneManager.LoadScene(escenaACargar);
     }

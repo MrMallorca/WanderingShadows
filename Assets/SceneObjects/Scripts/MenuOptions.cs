@@ -10,10 +10,13 @@ public class MenuOptions : MonoBehaviour
     [SerializeField] GameObject mainMenu;
 
     [SerializeField] AudioMixer audioMixer;
+
+    CanvasGroup interactableCanvas;
     // Start is called before the first frame update
 
     private void OnEnable()
     {
+        interactableCanvas = mainMenu.GetComponent<CanvasGroup>();
         back.onClick.AddListener(BackMainMenu);
     }
 
@@ -30,12 +33,20 @@ public class MenuOptions : MonoBehaviour
 
     public void BackMainMenu()
     {
-        mainMenu.SetActive(true);
+        interactableCanvas.interactable = true;
         gameObject.SetActive(false);
     }
 
     public void SetMasterVolume(float volume)
     {
         audioMixer.SetFloat("Master", volume);
+    }
+    public void SetSfxVolume(float volume)
+    {
+        audioMixer.SetFloat("SFX", volume);
+    }
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("Music", volume);
     }
 }

@@ -46,6 +46,9 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     float verticalVelocityOnGrounded = -1f;
 
+    float deathGravityMultiplier = 3f;
+
+
     AudioSource audio;
     public AudioClip[] clips;
     private void OnEnable()
@@ -86,15 +89,21 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (startGame == true )
         {
-            if(isDead == false )
+       
+            if (isDead == false)
             {
 
-                Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime + 
+                Vector3 movement = Vector3.right * speed * Time.fixedDeltaTime +
                   Vector3.up * verticalVelocity * Time.deltaTime;
                 controller.Move(movement);
  
             }
-            
+            else
+            {
+                Vector3 movement2 = Vector3.up * verticalVelocity * Time.deltaTime;
+                controller.Move(movement2);
+            }
+
         }
 
 
@@ -109,9 +118,13 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
             isDead = true;
             audio.PlayOneShot(clips[1]);
             anim.SetTrigger("isDead");
+
+
+
+
         }
 
-       
+
 
 
         verticalVelocity += gravity * Time.deltaTime;
@@ -133,6 +146,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         }
     }
+
 
     IEnumerator  KnockBack()
     {
@@ -178,7 +192,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     void OnJump(InputAction.CallbackContext ctx)
     {
-        if (startGame)
+        if (startGame && !isDead)
         {
             if (controller.isGrounded)
             {
@@ -192,13 +206,13 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (ctx.performed && startGame)
         {
-            if (gameObject.name == "Samurai(Clone)" 
+            if (gameObject.name == "Samurai(Clone)"
                 || gameObject.name == "Samurai")
             {
                 if (jumpCount < 2)
                 {
-                    audio.PlayOneShot(clips[0]);
                     verticalVelocity = jumpForce;
+                    audio.PlayOneShot(clips[0]);
 
                     jumpCount++;
 

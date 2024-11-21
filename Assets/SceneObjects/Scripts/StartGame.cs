@@ -21,6 +21,8 @@ public class StartGame : MonoBehaviour
         cambiarPantallaScript = GetComponent<NavigateToAfterTimeOrPress>();
         StartCoroutine(BlinkText());
 
+
+
     }
     private void OnEnable()
     {
@@ -51,6 +53,8 @@ public class StartGame : MonoBehaviour
     public void onStartGame(InputAction.CallbackContext ctx)
     {
         SceneManager.LoadScene(escenaACargar);
+        //LoadingScene.instance.voidLoadScene(escenaACargar);
+
     }
 
     private void OnDisable()

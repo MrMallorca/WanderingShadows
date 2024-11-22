@@ -15,12 +15,25 @@ public class StartGame : MonoBehaviour
 
     NavigateToAfterTimeOrPress cambiarPantallaScript;
 
+    float timeToBlink;
+
+    AudioSource camSound;
+    [SerializeField] AudioClip[] clips;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         cambiarPantallaScript = GetComponent<NavigateToAfterTimeOrPress>();
-        StartCoroutine(BlinkText());
 
+        camSound = Camera.main.GetComponent<AudioSource>();
+
+        camSound.clip = clips[0];
+        camSound.Play();
+        timeToBlink = 0.5f;
+
+        StartCoroutine(BlinkText());
 
 
     }
@@ -42,19 +55,30 @@ public class StartGame : MonoBehaviour
     {
         while (true)
         {
-
             text.text = " ";
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(timeToBlink);
             text.text = "-PRESS ANY BUTTON-";
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(timeToBlink);
         }
     }
 
     public void onStartGame(InputAction.CallbackContext ctx)
     {
-        SceneManager.LoadScene(escenaACargar);
-        //LoadingScene.instance.voidLoadScene(escenaACargar);
+        ctx.action.Disable();
+        StartCoroutine(LaunchGame());
 
+    }
+
+    IEnumerator LaunchGame()
+    {
+        timeToBlink = 0.1f;
+        camSound.Pause();
+        camSound.clip = clips[1];
+        camSound.Play();
+
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(escenaACargar);
+       
     }
 
     private void OnDisable()

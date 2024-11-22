@@ -46,8 +46,6 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     float verticalVelocityOnGrounded = -1f;
 
-    float deathGravityMultiplier = 3f;
-
 
     AudioSource audio;
     public AudioClip[] clips;
@@ -65,6 +63,8 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     void Start()
     {
+        Physics.IgnoreLayerCollision(6, 7, false);
+
         currentPlayer = this;
 
         audio = GetComponent<AudioSource>();
@@ -124,9 +124,6 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         }
 
-
-
-
         verticalVelocity += gravity * Time.deltaTime;
         anim.SetBool("isJumping", !controller.isGrounded);
 
@@ -138,12 +135,9 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         if (hit.gameObject.CompareTag("Damageable") && !isDead)
         {
             
-            audio.PlayOneShot(clips[2]);
-
-            
             StartCoroutine(KnockBack());
-            
 
+            audio.PlayOneShot(clips[2]);
         }
     }
 
@@ -209,7 +203,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
             if (gameObject.name == "Samurai(Clone)"
                 || gameObject.name == "Samurai")
             {
-                if (jumpCount < 2)
+                if (jumpCount < 2 && !isDead)
                 {
                     verticalVelocity = jumpForce;
                     audio.PlayOneShot(clips[0]);

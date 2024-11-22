@@ -74,12 +74,12 @@ public class LoadingScene : MonoBehaviour
         }
     }
 
-    [MenuItem("LoadingScene/Debug/Change to OutdoorsScene")]
+    //[MenuItem("LoadingScene/Debug/Change to OutdoorsScene")]
 
-    static public void DebugChangeToOutdoorsScene()
-    {
-        LoadingScene.instance.voidLoadScene("MainMenu");
-    }
+    //static public void DebugChangeToOutdoorsScene()
+    //{
+    //    LoadingScene.instance.voidLoadScene("MainMenu");
+    //}
 }
 
 

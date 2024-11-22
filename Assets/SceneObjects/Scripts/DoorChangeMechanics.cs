@@ -8,7 +8,7 @@ public class DoorChangeMechanics : MonoBehaviour
 {
 
     [SerializeField] GameObject playerToInvoke;
-    GameObject lastPlayer;
+    public GameObject lastPlayer;
 
     Vector3 lastPlayerPosition;
     Quaternion lastPlayerRotation;
@@ -19,7 +19,6 @@ public class DoorChangeMechanics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastPlayer = GameObject.FindWithTag("Player");
 
 
     }
@@ -27,6 +26,8 @@ public class DoorChangeMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        lastPlayer = GameObject.FindWithTag("Player");
+
         if (lastPlayer != null)
         {
             lastPlayerPosition = lastPlayer.transform.position;
@@ -44,7 +45,7 @@ public class DoorChangeMechanics : MonoBehaviour
             }
             else
             {
-                if(playerToInvoke != lastPlayer) 
+                if(playerToInvoke != null && playerToInvoke.name != lastPlayer.name) 
                 {
                     Destroy(lastPlayer);
                     Instantiate(playerToInvoke, lastPlayerPosition, lastPlayerRotation);
@@ -62,6 +63,14 @@ public class DoorChangeMechanics : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(SceneManager.GetActiveScene().name == "Level2")
+        {
+            SceneManager.LoadScene("MenuSelector");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
     }
 }

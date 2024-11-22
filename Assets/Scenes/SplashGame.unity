@@ -16032,7 +16032,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -press any key-
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 324671891bad18c48a80184388f6d651, type: 2}
   m_sharedMaterial: {fileID: 6263999034464096965, guid: 324671891bad18c48a80184388f6d651, type: 2}
@@ -25893,6 +25893,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: -2298573624000037993, guid: bf506f30c36540c4a90ab1d362b625ce, type: 3}
   text: {fileID: 1296664003}
+  clips:
+  - {fileID: 8300000, guid: edd7394af4b498c4eb8565ffa79961b7, type: 3}
+  - {fileID: 8300000, guid: 2888a41e60e106341ae818d4f1138eee, type: 3}
 --- !u!1001 &966404678271938231
 PrefabInstance:
   m_ObjectHideFlags: 0

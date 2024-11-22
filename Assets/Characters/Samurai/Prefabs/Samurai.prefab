@@ -972,7 +972,10 @@ MonoBehaviour:
   jumpForce: 5
   jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
   isHitted: 0
-  verticalVelocityOnGrounded: -1
+  clips:
+  - {fileID: 8300000, guid: 76bf60291a9311242a56c6e062261539, type: 3}
+  - {fileID: 8300000, guid: 11babaf64b2b97c4aa77f9bd5a4608f1, type: 3}
+  - {fileID: 8300000, guid: e9ffde28880c2d8408c96597d0a5f213, type: 3}
 --- !u!82 &5199663490960225043
 AudioSource:
   m_ObjectHideFlags: 0

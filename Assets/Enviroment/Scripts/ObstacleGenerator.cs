@@ -10,12 +10,12 @@ public class ObstacleGenerator : MonoBehaviour
 
     private void Start()
     {
+        generatorPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-          generatorPos = transform.position;
     }
 
     private void RandomSpawner()
@@ -29,7 +29,7 @@ public class ObstacleGenerator : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            InvokeRepeating("RandomSpawner", 0f, 3f);
+            InvokeRepeating("RandomSpawner", 0f, 1.5f);
         }
 
     }

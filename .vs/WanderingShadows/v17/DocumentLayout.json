@@ -3,15 +3,19 @@
   "WorkspaceRootPath": "D:\\EduDelgado\\WanderingShadows\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\loadingscenes\\scripts\\loadingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\loadingscenes\\scripts\\loadingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\loadingscenes\\scripts\\loadnextscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\loadingscenes\\scripts\\loadnextscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\loadingscenes\\scripts\\loadingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\loadingscenes\\scripts\\loadingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\doorchangemechanics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\enviroment\\scripts\\obstaclegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\enviroment\\scripts\\obstaclegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|d:\\edudelgado\\wanderingshadows\\assets\\characters\\icharacterstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\icharacterstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|D:\\EduDelgado\\WanderingShadows\\assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,24 +58,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ICharacterStatus.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\ICharacterStatus.cs",
-              "RelativeDocumentMoniker": "Assets\\Characters\\ICharacterStatus.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\ICharacterStatus.cs",
-              "RelativeToolTip": "Assets\\Characters\\ICharacterStatus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "LoadNextScene.cs",
+              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\LoadingScenes\\Scripts\\LoadNextScene.cs",
+              "RelativeDocumentMoniker": "Assets\\LoadingScenes\\Scripts\\LoadNextScene.cs",
+              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\LoadingScenes\\Scripts\\LoadNextScene.cs",
+              "RelativeToolTip": "Assets\\LoadingScenes\\Scripts\\LoadNextScene.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:51:03.965Z",
+              "WhenOpened": "2024-11-22T11:21:35.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "LoadingScene.cs",
+              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
+              "RelativeDocumentMoniker": "Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
+              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
+              "RelativeToolTip": "Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T07:40:01.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DoorChangeMechanics.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
               "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
@@ -83,21 +96,7 @@
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\DoorChangeMechanics.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAowC8AAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:41:09.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoadingScene.cs",
-              "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
-              "RelativeDocumentMoniker": "Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
-              "ToolTip": "D:\\EduDelgado\\WanderingShadows\\Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
-              "RelativeToolTip": "Assets\\LoadingScenes\\Scripts\\LoadingScene.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAqwFEAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:40:01.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T08:41:09.455Z"
             },
             {
               "$type": "Document",
@@ -125,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "StartGame.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\StartGame.cs",
               "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
@@ -133,12 +132,11 @@
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
               "ViewState": "AQIAADsAAAAAAAAAAAAcwEwAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T13:11:02.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T13:11:02.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ObstacleGenerator.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Enviroment\\Scripts\\ObstacleGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Enviroment\\Scripts\\ObstacleGenerator.cs",
@@ -146,8 +144,7 @@
               "RelativeToolTip": "Assets\\Enviroment\\Scripts\\ObstacleGenerator.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAYwBYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:24:43.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:24:43.306Z"
             },
             {
               "$type": "Document",
@@ -159,12 +156,11 @@
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\GameLogic.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAgwGAAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T08:04:26.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:04:26.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlayerScript.cs",
               "DocumentMoniker": "D:\\EduDelgado\\WanderingShadows\\Assets\\Characters\\PlayerScript.cs",
               "RelativeDocumentMoniker": "Assets\\Characters\\PlayerScript.cs",
@@ -172,8 +168,7 @@
               "RelativeToolTip": "Assets\\Characters\\PlayerScript.cs",
               "ViewState": "AQIAALMAAAAAAAAAAAAYwM0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T22:07:57.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T22:07:57.157Z"
             },
             {
               "$type": "Document",

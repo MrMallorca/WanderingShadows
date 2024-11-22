@@ -7,18 +7,57 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 public class LoadingScene : MonoBehaviour
 {
+    [SerializeField] string firstSceneToLoad;
     [SerializeField] CanvasGroup fader;
     Scene currentScene;
 
-    public static LoadingScene instance;
+    static public LoadingScene instance;
+    static bool wasLoadedOnPlayModeStateChange;
 
+#if UNITY_EDITOR
+    [InitializeOnLoadMethod]
+
+    static void ListenToApplicationModeChange()
+    {
+        EditorApplication.playModeStateChanged += OnPlayModeStateChange;
+    }
+
+    private static void OnPlayModeStateChange(PlayModeStateChange change)
+    {
+        wasLoadedOnPlayModeStateChange = false;
+
+        if (change == PlayModeStateChange.EnteredPlayMode)
+        {
+            if (SceneManager.GetSceneAt(0).name != "LoadingScene")
+            {
+                SceneManager.LoadScene("LoadingScene", LoadSceneMode.Additive);
+                wasLoadedOnPlayModeStateChange = true;
+                Scene loadingScene = SceneManager.GetSceneAt(SceneManager.loadedSceneCount - 1);
+            }
+        }
+    }
+#endif
     private void Awake()
     {
         instance = this;
 
     }
 
-    public void voidLoadScene(string sceneName)
+
+    private void Start()
+    {
+        if (!wasLoadedOnPlayModeStateChange)
+        {
+            LoadScene(firstSceneToLoad);
+        }
+        else
+        {
+            currentScene = SceneManager.GetSceneAt(0);
+            fader.DOFade(0f, 0f);
+        }
+    }
+
+    public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadSceneCoroutine(sceneName));
     }
@@ -56,7 +95,7 @@ public class LoadingScene : MonoBehaviour
             }
             while (!loadOperation.isDone);  
 
-            currentScene = SceneManager.GetSceneAt(1);
+            currentScene = SceneManager.GetSceneAt(SceneManager.loadedSceneCount - 1);
             SceneManager.SetActiveScene(currentScene);
         }
 
@@ -73,13 +112,14 @@ public class LoadingScene : MonoBehaviour
             }
         }
     }
+#if UNITY_EDITOR
+    [MenuItem("LoadingScene/Debug/Change to OutdoorsScene")]
 
-    //[MenuItem("LoadingScene/Debug/Change to OutdoorsScene")]
-
-    //static public void DebugChangeToOutdoorsScene()
-    //{
-    //    LoadingScene.instance.voidLoadScene("MainMenu");
-    //}
+    static public void DebugChangeToOutdoorsScene()
+    {
+        LoadingScene.instance.LoadScene("MainMenu");
+    }
+#endif 
 }
 
 

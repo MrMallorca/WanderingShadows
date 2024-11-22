@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd25170a60a5cc4b8803ab37d3bfd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSceneToLoad: SplashGame
   fader: {fileID: 608163068}
 --- !u!1 &1613298523
 GameObject:

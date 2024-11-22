@@ -410,6 +410,7 @@
 "Assets/Game Boy Splash Screen/ColorRamp.cs"
 "Assets/LoadingScenes/Scripts/LoadingIcon.cs"
 "Assets/LoadingScenes/Scripts/LoadingScene.cs"
+"Assets/LoadingScenes/Scripts/LoadNextScene.cs"
 "Assets/SceneObjects/Scripts/AutoSavedCheckBox.cs"
 "Assets/SceneObjects/Scripts/CanvasOptions.cs"
 "Assets/SceneObjects/Scripts/DoorChangeMechanics.cs"

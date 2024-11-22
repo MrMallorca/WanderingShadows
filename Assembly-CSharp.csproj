@@ -82,6 +82,7 @@
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyBow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Characters\Enemies\Scripts\EnemyStatic.cs" />
+    <Compile Include="Assets\LoadingScenes\Scripts\LoadNextScene.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\SceneObjects\Scripts\HealthBar.cs" />
     <Compile Include="Assets\SceneObjects\Scripts\LevelSelector.cs" />

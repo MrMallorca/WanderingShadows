@@ -81,7 +81,7 @@ public class Ninja : MonoBehaviour
 
     void OnAbility(InputAction.CallbackContext ctx)
     {
-        if (!playerScript.isDead && canDash)
+        if (!playerScript.isDead && canDash && playerScript.startGame)
         {
             if (abilityCounter > 0)
             {
@@ -97,6 +97,7 @@ public class Ninja : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        abilityCounter -= 1;
         dashDirection = transform.forward;
         Physics.IgnoreLayerCollision(6, 7, true);
         

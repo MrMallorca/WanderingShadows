@@ -402,7 +402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level selector
+  m_text: Choose your way
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 324671891bad18c48a80184388f6d651, type: 2}
   m_sharedMaterial: {fileID: 6263999034464096965, guid: 324671891bad18c48a80184388f6d651, type: 2}

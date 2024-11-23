@@ -8,7 +8,6 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class LevelSelector : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI blinkText;
 
     [SerializeField] Button ninjaWayBtn;
     [SerializeField] Button samuraiWayBtn;
@@ -25,18 +24,17 @@ public class LevelSelector : MonoBehaviour
 
     private void Awake()
     {
-
-
-    }
-    void Start()
-    {
         ninjaWayBtn.onClick.AddListener(LoadNinjaLevel);
         samuraiWayBtn.onClick.AddListener(LoadSamuraiLevel);
         geishaWayBtn.onClick.AddListener(LoadGeishaLevel);
         back.onClick.AddListener(BackToMainMenu);
 
+    }
+    void Start()
+    {
+    
 
-        StartCoroutine(BlinkText());
+
 
     }
 
@@ -84,15 +82,13 @@ public class LevelSelector : MonoBehaviour
 
     }
 
-    IEnumerator BlinkText()
-    {
-        while (true)
-        {
+   
 
-            blinkText.text = " ";
-            yield return new WaitForSeconds(0.5f);
-            blinkText.text = "-LEVEL SELECTOR-";
-            yield return new WaitForSeconds(0.5f);
-        }
+    void OnDestroy()
+    {
+        ninjaWayBtn.onClick.RemoveListener(LoadNinjaLevel);
+        samuraiWayBtn.onClick.RemoveListener(LoadSamuraiLevel);
+        geishaWayBtn.onClick.RemoveListener(LoadGeishaLevel);
+
     }
 }

@@ -12,10 +12,12 @@ using UnityEditor;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] Button play;
+    [SerializeField] Button howTo;
     [SerializeField] Button options;
     [SerializeField] Button quit;
 
     [SerializeField] GameObject canvasOptions;
+    [SerializeField] GameObject canvasHowTo;
 
     CanvasGroup interactableCanvas;
 
@@ -28,6 +30,7 @@ public class MainMenu : MonoBehaviour
     private void OnEnable()
     {
         play.onClick.AddListener(PlayGame);
+        howTo.onClick.AddListener(HowToPlayClicked);
         options.onClick.AddListener(OnOptionsButtonClicked);
         quit.onClick.AddListener(ExitGame);
     }
@@ -41,6 +44,12 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(escenaACambiar);
+    }
+
+    public void HowToPlayClicked()
+    {
+        interactableCanvas.interactable = false;
+        canvasHowTo.SetActive(true);
     }
 
     public void ExitGame()
@@ -57,5 +66,14 @@ public class MainMenu : MonoBehaviour
     {
         interactableCanvas.interactable = false;
         canvasOptions.SetActive(true);
+    }
+
+
+    void OnDestroy()
+    {
+        play.onClick.RemoveListener(PlayGame);
+        options.onClick.RemoveListener(OnOptionsButtonClicked);
+        quit.onClick.RemoveListener(ExitGame);
+
     }
 }

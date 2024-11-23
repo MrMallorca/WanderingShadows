@@ -17,9 +17,7 @@ public class StartGame : MonoBehaviour
 
     float timeToBlink;
 
-    AudioSource camSound;
-    [SerializeField] AudioClip[] clips;
-
+    [SerializeField] AudioSource camSound2;
 
 
     // Start is called before the first frame update
@@ -27,10 +25,6 @@ public class StartGame : MonoBehaviour
     {
         cambiarPantallaScript = GetComponent<NavigateToAfterTimeOrPress>();
 
-        camSound = Camera.main.GetComponent<AudioSource>();
-
-        camSound.clip = clips[0];
-        camSound.Play();
         timeToBlink = 0.5f;
 
         StartCoroutine(BlinkText());
@@ -42,7 +36,6 @@ public class StartGame : MonoBehaviour
         start.action.Enable();
 
         start.action.performed += onStartGame;
-        start.action.canceled += onStartGame;
     }
 
     // Update is called once per frame
@@ -64,17 +57,16 @@ public class StartGame : MonoBehaviour
 
     public void onStartGame(InputAction.CallbackContext ctx)
     {
-        ctx.action.Disable();
+       
         StartCoroutine(LaunchGame());
-
+        
     }
 
     IEnumerator LaunchGame()
     {
         timeToBlink = 0.1f;
-        camSound.Pause();
-        camSound.clip = clips[1];
-        camSound.Play();
+        camSound2.Play();
+
 
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(escenaACargar);
@@ -86,6 +78,5 @@ public class StartGame : MonoBehaviour
         start.action.Disable();
 
         start.action.performed -= onStartGame;
-        start.action.canceled -= onStartGame;
     }
 }

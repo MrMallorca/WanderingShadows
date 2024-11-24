@@ -839,7 +839,6 @@ MonoBehaviour:
   jump: {fileID: -368993424180677597, guid: 51f57f102d981e5469ea8c5e703806cd, type: 3}
   isHitted: 0
   clips:
-  - {fileID: 0}
   - {fileID: 8300000, guid: 2688725737d4f884dabacd6e2f1475e7, type: 3}
   - {fileID: 8300000, guid: a3464cbad34d76e408a52bb94fedfba6, type: 3}
 --- !u!114 &7694122334954855356

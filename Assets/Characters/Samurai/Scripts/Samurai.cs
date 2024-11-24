@@ -87,7 +87,7 @@ public class Samurai : MonoBehaviour
 
         deflectionZone.gameObject.SetActive(true);
         deflectParticle.gameObject.SetActive(true);
-        audio.PlayOneShot(playerScript.clips[3]);
+        audio.PlayOneShot(playerScript.clips[2]);
         yield return new WaitForSeconds(deflectTime);
 
         isDeflecting = false;

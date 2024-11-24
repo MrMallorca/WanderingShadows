@@ -9,12 +9,15 @@ public class CanvasOptions : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] Button resume;
+    [SerializeField] Button howTo;
     [SerializeField] Button options;
     [SerializeField] Button mainMenu;
+
 
     private string escenaACambiar;
 
     [SerializeField] GameObject canvasOptions;
+    [SerializeField] GameObject canvasHowTo;
 
     CanvasGroup interactableCanvas;
 
@@ -22,6 +25,7 @@ public class CanvasOptions : MonoBehaviour
     private void OnEnable()
     {
         resume.onClick.AddListener(ResumeGame);
+        howTo.onClick.AddListener(HowToPlayClicked);
         options.onClick.AddListener(OptionsMenu);
         mainMenu.onClick.AddListener(BackToMainMenu);
 
@@ -40,6 +44,11 @@ public class CanvasOptions : MonoBehaviour
     {
         
     }
+    public void HowToPlayClicked()
+    {
+        interactableCanvas.interactable = false;
+        canvasHowTo.SetActive(true);
+    }
 
     public void ResumeGame()
     {
@@ -57,8 +66,16 @@ public class CanvasOptions : MonoBehaviour
     public void BackToMainMenu() 
     {
         escenaACambiar = "MainMenu";
-        SceneManager.LoadScene(escenaACambiar);
+        SceneManager.LoadSceneAsync(escenaACambiar);
     }
 
-   
+    private void OnDisable()
+    {
+        resume.onClick.RemoveListener(ResumeGame);
+        howTo.onClick.RemoveListener(HowToPlayClicked);
+        options.onClick.RemoveListener(OptionsMenu);
+        mainMenu.onClick.RemoveListener(BackToMainMenu);
+
+
+    }
 }

@@ -116,7 +116,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
         if (GameLogic.vidas <= 0 && isDead == false) 
         {
             isDead = true;
-            audio.PlayOneShot(clips[1]);
+            audio.PlayOneShot(clips[0]);
             anim.SetTrigger("isDead");
 
 
@@ -137,7 +137,7 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
             
             StartCoroutine(KnockBack());
 
-            audio.PlayOneShot(clips[2]);
+            audio.PlayOneShot(clips[1]);
         }
     }
 
@@ -206,7 +206,6 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
                 if (jumpCount < 2 && !isDead)
                 {
                     verticalVelocity = jumpForce;
-                    audio.PlayOneShot(clips[0]);
 
                     jumpCount++;
 

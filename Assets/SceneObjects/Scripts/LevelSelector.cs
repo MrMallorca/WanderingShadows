@@ -32,8 +32,8 @@ public class LevelSelector : MonoBehaviour
     }
     void Start()
     {
-    
 
+        crossfadeAnim.Play("Crossfade_End");
 
 
     }
@@ -49,6 +49,7 @@ public class LevelSelector : MonoBehaviour
 
         escenaACambiar = "Level1";
         StartCoroutine(LoadLevel(escenaACambiar));
+
     }
 
     public void LoadSamuraiLevel()
@@ -70,13 +71,17 @@ public class LevelSelector : MonoBehaviour
 
     IEnumerator LoadLevel(string levelName)
     {
+        Debug.Log("entro");
+
         crossfadeAnim.SetTrigger("Start");
 
 
         yield return new WaitForSeconds(transitionTime);
 
+        Debug.Log("paso");
+        
 
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadSceneAsync(levelName);
 
 
 
@@ -84,11 +89,13 @@ public class LevelSelector : MonoBehaviour
 
    
 
-    void OnDestroy()
+    void OnDisable()
     {
         ninjaWayBtn.onClick.RemoveListener(LoadNinjaLevel);
         samuraiWayBtn.onClick.RemoveListener(LoadSamuraiLevel);
         geishaWayBtn.onClick.RemoveListener(LoadGeishaLevel);
+        back.onClick.RemoveListener(BackToMainMenu);
+
 
     }
 }

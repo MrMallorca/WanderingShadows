@@ -22,7 +22,6 @@ public class ChangeSlideOfTutorial : MonoBehaviour
 
     private void OnEnable()
     {
-        interactableCanvas = mainMenu.GetComponent<CanvasGroup>();
         back.onClick.AddListener(BackMainMenu);
         leftClickBtn.onClick.AddListener(ChangeLeftSlide);
         rightClickBtn.onClick.AddListener(ChangeRightSlide);
@@ -30,13 +29,13 @@ public class ChangeSlideOfTutorial : MonoBehaviour
     }
     void Start()
     {
+        interactableCanvas = mainMenu.GetComponent<CanvasGroup>();
         btnAnimator = GetComponentsInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void BackMainMenu()
@@ -48,18 +47,44 @@ public class ChangeSlideOfTutorial : MonoBehaviour
     public void ChangeLeftSlide()
     {
         btnAnimator[1].SetTrigger("Clicked");
-        ninjaCanvas.SetActive(true);
-        samuraiCanvas.SetActive(false);
-
+        if (ninjaCanvas.activeSelf)
+        {
+            ninjaCanvas.SetActive(false);
+            samuraiCanvas.SetActive(true);
+        }
+        else
+        {
+            ninjaCanvas.SetActive(true);
+            samuraiCanvas.SetActive(false);
+        }
+        btnAnimator[1].ResetTrigger("Clicked");
 
 
     }
     public void ChangeRightSlide()
     {
         btnAnimator[0].SetTrigger("Clicked");
-        ninjaCanvas.SetActive(false);
-        samuraiCanvas.SetActive(true);
 
+        if (samuraiCanvas.activeSelf)
+        {
+            samuraiCanvas.SetActive(false);
+            ninjaCanvas.SetActive(true);
+        }
+        else
+        {
+            samuraiCanvas.SetActive(true);
+            ninjaCanvas.SetActive(false);
+        }
+        btnAnimator[0].ResetTrigger("Clicked");
+
+
+    }
+
+    private void OnDisable()
+    {
+        back.onClick.RemoveListener(BackMainMenu);
+        leftClickBtn.onClick.RemoveListener(ChangeLeftSlide);
+        rightClickBtn.onClick.RemoveListener(ChangeRightSlide);
 
     }
 }

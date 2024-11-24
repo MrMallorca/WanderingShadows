@@ -49,4 +49,9 @@ public class MenuOptions : MonoBehaviour
     {
         audioMixer.SetFloat("Music", volume);
     }
+
+    private void OnDisable()
+    {
+        back.onClick.RemoveListener(BackMainMenu);
+    }
 }

@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(escenaACambiar);
+        SceneManager.LoadSceneAsync(escenaACambiar);
     }
 
     public void HowToPlayClicked()
@@ -69,9 +69,10 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    void OnDestroy()
+    void OnDisable()
     {
         play.onClick.RemoveListener(PlayGame);
+        howTo.onClick.RemoveListener(HowToPlayClicked);
         options.onClick.RemoveListener(OnOptionsButtonClicked);
         quit.onClick.RemoveListener(ExitGame);
 

@@ -26,6 +26,8 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         interactableCanvas = GetComponent<CanvasGroup>();
+        Time.timeScale = 1f;
+
     }
     private void OnEnable()
     {

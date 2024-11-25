@@ -27,9 +27,12 @@ public class ObstacleGenerator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entro");
         if(other.gameObject.CompareTag("Player"))
         {
-            InvokeRepeating("RandomSpawner", 0f, 1.5f);
+            Debug.Log("entroPlayer");
+
+            InvokeRepeating("RandomSpawner", 1f, 1.5f);
         }
 
     }

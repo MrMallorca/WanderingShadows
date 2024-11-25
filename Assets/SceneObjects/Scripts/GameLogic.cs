@@ -13,6 +13,8 @@ public class GameLogic : MonoBehaviour
     public Image healthBar;
 
     [SerializeField] GameObject canvasPause;
+    [SerializeField] GameObject canvasHowTo;
+    [SerializeField] GameObject canvasOptions;
 
     string escenaACambiar;
     public AudioClip[] audios;
@@ -34,8 +36,9 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         escenaACambiar = SceneManager.GetActiveScene().name;
+        Time.timeScale = 1f;
 
-        if(escenaACambiar == "Level1")
+        if (escenaACambiar == "Level1")
         {
             StartCoroutine(PlayMusic(audios[0], 0f, false));
             StartCoroutine(PlayMusic(audios[1], audios[0].length + 1, true));
@@ -71,7 +74,7 @@ public class GameLogic : MonoBehaviour
 
         healthBar.sprite = healthSprites[vidas];
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !canvasHowTo.activeSelf && !canvasOptions.activeSelf)
         {
             if (isPaused)
             {

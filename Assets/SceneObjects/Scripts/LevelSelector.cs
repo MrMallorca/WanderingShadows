@@ -33,7 +33,6 @@ public class LevelSelector : MonoBehaviour
     void Start()
     {
 
-        crossfadeAnim.Play("Crossfade_End");
 
 
     }
@@ -73,13 +72,7 @@ public class LevelSelector : MonoBehaviour
     {
         Debug.Log("entro");
 
-        crossfadeAnim.SetTrigger("Start");
-
-
-        yield return new WaitForSeconds(transitionTime);
-
-        Debug.Log("paso");
-        
+        yield return new WaitForSeconds(transitionTime);        
 
         SceneManager.LoadSceneAsync(levelName);
 

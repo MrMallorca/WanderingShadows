@@ -111,8 +111,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1910663, y: 1.1531013, z: 0.21502943}
-  m_Center: {x: 0.0015392022, y: 0.5994067, z: -0.03}
+  m_Size: {x: 1.1910663, y: 0.8067623, z: 0.21502943}
+  m_Center: {x: 0.0015392072, y: 0.42623723, z: -0.03}
 --- !u!114 &159977635471693916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,4 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToInvoke: {fileID: 0}
+  lastPlayer: {fileID: 0}
   canvasVictory: {fileID: 0}

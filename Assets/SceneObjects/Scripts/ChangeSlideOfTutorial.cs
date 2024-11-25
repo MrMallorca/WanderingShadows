@@ -57,7 +57,6 @@ public class ChangeSlideOfTutorial : MonoBehaviour
             ninjaCanvas.SetActive(true);
             samuraiCanvas.SetActive(false);
         }
-        btnAnimator[1].ResetTrigger("Clicked");
 
 
     }
@@ -75,7 +74,6 @@ public class ChangeSlideOfTutorial : MonoBehaviour
             samuraiCanvas.SetActive(true);
             ninjaCanvas.SetActive(false);
         }
-        btnAnimator[0].ResetTrigger("Clicked");
 
 
     }

@@ -827,7 +827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 291141183934587743, guid: 9f0d5af939e0ed54d82c36954badff9d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8269582285193356263, guid: 9f0d5af939e0ed54d82c36954badff9d, type: 3}
       propertyPath: m_Pivot.x
@@ -1818,7 +1818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.083000004, y: 0.3803475}
   m_AnchorMax: {x: 0.37600002, y: 0.46}
-  m_AnchoredPosition: {x: -61.200073, y: 5.2469788}
+  m_AnchoredPosition: {x: -61.200134, y: 5.2469788}
   m_SizeDelta: {x: -1.3354034, y: -1.6947002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202010708
@@ -3001,7 +3001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.083000004, y: 0.61200005}
   m_AnchorMax: {x: 0.37600002, y: 0.6913475}
-  m_AnchoredPosition: {x: -61.700073, y: 4.647003}
+  m_AnchoredPosition: {x: -61.700134, y: 4.647003}
   m_SizeDelta: {x: -2.3354034, y: -1.6947021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330750448
@@ -3371,7 +3371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.083000004, y: 0.3803475}
   m_AnchorMax: {x: 0.37600002, y: 0.46}
-  m_AnchoredPosition: {x: -58.74817, y: -61}
+  m_AnchoredPosition: {x: -58.74823, y: -61}
   m_SizeDelta: {x: -1.3354034, y: -1.6947002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363199287
@@ -9879,7 +9879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.083000004, y: 0.3803475}
   m_AnchorMax: {x: 0.37600002, y: 0.46}
-  m_AnchoredPosition: {x: -58.748047, y: -129.15}
+  m_AnchoredPosition: {x: -58.748108, y: -129.15}
   m_SizeDelta: {x: -1.3354034, y: -1.6947002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020477824
@@ -12696,6 +12696,8 @@ MonoBehaviour:
   - {fileID: 1687183995, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   healthBar: {fileID: 4193508798021086471}
   canvasPause: {fileID: 1932131590}
+  canvasHowTo: {fileID: 1688808674}
+  canvasOptions: {fileID: 2098344037}
   audios:
   - {fileID: 8300000, guid: 46f5097b4f139ee43b4110004fe0d6fa, type: 3}
   - {fileID: 8300000, guid: 10397941b2e0564498b4d223736c2bd3, type: 3}
@@ -20182,7 +20184,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1932131596
 RectTransform:

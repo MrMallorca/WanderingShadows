@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class MenuOptions : MonoBehaviour
@@ -18,12 +19,15 @@ public class MenuOptions : MonoBehaviour
     {
         interactableCanvas = mainMenu.GetComponent<CanvasGroup>();
         back.onClick.AddListener(BackMainMenu);
+
+       
+
     }
 
     void Start()
     {
-       
     }
+
 
     // Update is called once per frame
     void Update()
@@ -40,14 +44,17 @@ public class MenuOptions : MonoBehaviour
     public void SetMasterVolume(float volume)
     {
         audioMixer.SetFloat("Master", volume);
+        PlayerPrefs.SetFloat("Master", volume);
     }
     public void SetSfxVolume(float volume)
     {
         audioMixer.SetFloat("SFX", volume);
+        PlayerPrefs.SetFloat("SFX", volume);
     }
     public void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat("Music", volume);
+        PlayerPrefs.SetFloat("Music", volume);
     }
 
     private void OnDisable()

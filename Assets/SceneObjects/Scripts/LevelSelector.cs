@@ -16,10 +16,10 @@ public class LevelSelector : MonoBehaviour
 
 
     [SerializeField] Animator crossfadeAnim;
-    private float transitionTime = 1f;
+    private float transitionTime = 1.3f;
     private string escenaACambiar;
 
-
+    AudioSource audio;
     // Start is called before the first frame update
 
     private void Awake()
@@ -32,7 +32,7 @@ public class LevelSelector : MonoBehaviour
     }
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
 
 
     }
@@ -70,9 +70,12 @@ public class LevelSelector : MonoBehaviour
 
     IEnumerator LoadLevel(string levelName)
     {
-        Debug.Log("entro");
+        crossfadeAnim.SetTrigger("Start");
+        audio.Play();
 
-        yield return new WaitForSeconds(transitionTime);        
+        yield return new WaitForSeconds(transitionTime);
+
+        audio.Stop();
 
         SceneManager.LoadSceneAsync(levelName);
 

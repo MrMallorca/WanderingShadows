@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 587.70807, g: 822.23914, b: 1012.11926, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -827,7 +827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 291141183934587743, guid: 9f0d5af939e0ed54d82c36954badff9d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8269582285193356263, guid: 9f0d5af939e0ed54d82c36954badff9d, type: 3}
       propertyPath: m_Pivot.x
@@ -18686,7 +18686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Doble salto
+  m_text: Double Jump
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 324671891bad18c48a80184388f6d651, type: 2}
   m_sharedMaterial: {fileID: 6263999034464096965, guid: 324671891bad18c48a80184388f6d651, type: 2}
@@ -20989,10 +20989,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1238266125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.85800004, y: 0.8476685}
-  m_AnchorMax: {x: 0.93984866, y: 0.9642266}
-  m_AnchoredPosition: {x: -0.5, y: 1}
-  m_SizeDelta: {x: -10.73999, y: -13.083374}
+  m_AnchorMin: {x: 0.046525247, y: 0.8467789}
+  m_AnchorMax: {x: 0.12447476, y: 0.9571111}
+  m_AnchoredPosition: {x: 0.20007324, y: -2.0415955}
+  m_SizeDelta: {x: -0.73999023, y: -6.083374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035578066
 MonoBehaviour:

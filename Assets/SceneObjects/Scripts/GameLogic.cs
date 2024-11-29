@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class GameLogic : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class GameLogic : MonoBehaviour
 
         healthBar.sprite = healthSprites[vidas];
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !canvasHowTo.activeSelf && !canvasOptions.activeSelf)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && !canvasHowTo.activeSelf && !canvasOptions.activeSelf)
         {
             if (isPaused)
             {

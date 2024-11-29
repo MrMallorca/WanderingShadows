@@ -12410,8 +12410,8 @@ MonoBehaviour:
   - {fileID: -649418047, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   - {fileID: 1687183995, guid: b722c9256bad5e341a19852b93ec5f8a, type: 3}
   healthBar: {fileID: 4193508798021086471}
-  canvasPause: {fileID: 0}
-  canvasHowTo: {fileID: 0}
+  canvasPause: {fileID: 1093739398}
+  canvasHowTo: {fileID: 929285461}
   canvasOptions: {fileID: 1030329478}
   audios:
   - {fileID: 0}

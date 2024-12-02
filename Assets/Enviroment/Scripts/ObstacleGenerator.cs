@@ -8,6 +8,8 @@ public class ObstacleGenerator : MonoBehaviour
 
     private Vector3 generatorPos;
 
+    private bool isSpawning = false;
+
     private void Start()
     {
         generatorPos = transform.position;
@@ -18,22 +20,22 @@ public class ObstacleGenerator : MonoBehaviour
     {
     }
 
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && !isSpawning) 
+        {
+            isSpawning = true; 
+            InvokeRepeating("RandomSpawner", 1f, 1.5f);
+        }
+
+    }
+
     private void RandomSpawner()
     {
         Vector3 randomSpawnPosition = new Vector3(Random.Range(-20, 20), 0, -0.8f);
 
         Instantiate(obstacle, generatorPos + randomSpawnPosition, Quaternion.identity);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("entro");
-        if(other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("entroPlayer");
-
-            InvokeRepeating("RandomSpawner", 1f, 1.5f);
-        }
-
     }
 }

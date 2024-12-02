@@ -56,7 +56,7 @@ public class Samurai : MonoBehaviour
     }
     void OnAbility(InputAction.CallbackContext ctx)
     {
-        if (!playerScript.isDead && canDeflect)
+        if (!playerScript.isDead && canDeflect && playerScript.startGame)
         {
             if(abilityCounter > 0)
             {

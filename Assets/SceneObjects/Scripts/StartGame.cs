@@ -19,7 +19,11 @@ public class StartGame : MonoBehaviour
     float timeToBlink;
 
     [SerializeField] AudioSource camSound2;
+
     [SerializeField] AudioMixer audioMixer;
+    float masterVSliderValue;
+    float sFXSliderValue;
+    float musicSliderValue;
 
 
     // Start is called before the first frame update
@@ -31,9 +35,16 @@ public class StartGame : MonoBehaviour
 
         StartCoroutine(BlinkText());
 
-        audioMixer.SetFloat("Master", PlayerPrefs.GetFloat("Master", 20.0f));
-        audioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SFX", 10.0f));
-        audioMixer.SetFloat("Music", PlayerPrefs.GetFloat("Music", 20.0f));
+        masterVSliderValue = PlayerPrefs.GetFloat("Master", 0.5f);
+        audioMixer.SetFloat("Master", Mathf.Log10(masterVSliderValue) * 20);
+
+        sFXSliderValue = PlayerPrefs.GetFloat("SFX", 0.5f);
+        audioMixer.SetFloat("SFX", Mathf.Log10(sFXSliderValue) * 20);
+
+        musicSliderValue = PlayerPrefs.GetFloat("Music", 0.5f);
+        audioMixer.SetFloat("Music", Mathf.Log10(musicSliderValue) * 20);
+
+
     }
     private void OnEnable()
     {

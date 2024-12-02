@@ -47,6 +47,9 @@ public class DoorChangeMechanics : MonoBehaviour
             {
                 if(playerToInvoke != null && playerToInvoke.name != lastPlayer.name) 
                 {
+                    lastPlayerPosition = lastPlayer.transform.position;
+                    lastPlayerRotation = lastPlayer.transform.rotation;
+
                     Destroy(lastPlayer);
                     Instantiate(playerToInvoke, lastPlayerPosition, lastPlayerRotation);
                 }

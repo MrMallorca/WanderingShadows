@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class GameLogic : MonoBehaviour
 {
@@ -25,7 +26,10 @@ public class GameLogic : MonoBehaviour
 
     bool isPaused = false;
 
-
+    [SerializeField] AudioMixer audioMixer;
+    float masterVSliderValue;
+    float sFXSliderValue;
+    float musicSliderValue;
 
     private void Awake()
     {
@@ -38,6 +42,15 @@ public class GameLogic : MonoBehaviour
     {
         escenaACambiar = SceneManager.GetActiveScene().name;
         Time.timeScale = 1f;
+
+        masterVSliderValue = PlayerPrefs.GetFloat("Master", 0.5f);
+        audioMixer.SetFloat("Master", Mathf.Log10(masterVSliderValue) * 20);
+
+        sFXSliderValue = PlayerPrefs.GetFloat("SFX", 0.5f);
+        audioMixer.SetFloat("SFX", Mathf.Log10(sFXSliderValue) * 20);
+
+        musicSliderValue = PlayerPrefs.GetFloat("Music", 0.5f);
+        audioMixer.SetFloat("Music", Mathf.Log10(musicSliderValue) * 20);
 
         if (escenaACambiar == "Level1")
         {
@@ -75,7 +88,9 @@ public class GameLogic : MonoBehaviour
 
         healthBar.sprite = healthSprites[vidas];
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame && !canvasHowTo.activeSelf && !canvasOptions.activeSelf)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame 
+            && !canvasHowTo.activeSelf 
+            && !canvasOptions.activeSelf)
         {
             if (isPaused)
             {
@@ -104,7 +119,9 @@ public class GameLogic : MonoBehaviour
         }
         else
         {
+            vidas = 2;
             SceneManager.LoadScene(escenaACambiar);
+
         }
 
     }

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBow : MonoBehaviour
 {
     Vector3 offset;
     float arrowForce = 500f;
-    [SerializeField] float destroyTime;
 
     BoxCollider attackRange;
 
@@ -43,7 +43,7 @@ public class EnemyBow : MonoBehaviour
         GameObject arrow = Instantiate(arrowPrefab, transform.position + offset, transform.rotation);
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * arrowForce);
-        Destroy(arrow, destroyTime);
+
 
     }
 

@@ -46,6 +46,9 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
     float verticalVelocityOnGrounded = -1f;
 
+    private float groundedTime = 0f; // Tiempo acumulado estando grounded
+    private const float requiredGroundedTime = 2f;
+
 
     AudioSource audio;
     public AudioClip[] clips;
@@ -109,8 +112,15 @@ public class PlayerScript : MonoBehaviour, ICharacterStatus
 
         if (controller.isGrounded)
         {
-            jumpCount = 0;
             verticalVelocity = verticalVelocityOnGrounded;
+
+            groundedTime += Time.deltaTime;
+
+            if(groundedTime >= requiredGroundedTime)
+            {
+                jumpCount = 0;
+
+            }
         }
 
         if (GameLogic.vidas <= 0 && isDead == false) 

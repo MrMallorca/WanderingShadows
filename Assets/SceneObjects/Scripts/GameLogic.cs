@@ -42,6 +42,7 @@ public class GameLogic : MonoBehaviour
     {
         escenaACambiar = SceneManager.GetActiveScene().name;
         Time.timeScale = 1f;
+        vidas = 2;
 
         masterVSliderValue = PlayerPrefs.GetFloat("Master", 0.5f);
         audioMixer.SetFloat("Master", Mathf.Log10(masterVSliderValue) * 20);

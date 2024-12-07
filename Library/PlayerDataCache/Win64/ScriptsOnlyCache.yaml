@@ -76,7 +76,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.VolumeProfile
     Unity.RenderPipelines.HighDefinition.Editor.dll:
     - UnityEditor.Rendering.HighDefinition.HDProjectSettings
-    - UnityEditor.Rendering.HighDefinition.HDRenderPipelineGlobalSettingsEditor
     - UnityEditor.Rendering.HighDefinition.HDUserSettings
     Unity.RenderPipelines.HighDefinition.Runtime.dll:
     - UnityEngine.Rendering.HighDefinition.Bloom
@@ -119,10 +118,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -267,7 +264,6 @@ ScriptsOnlyBuild:
     - TMPro.KerningTable
     - TMPro.TMP_Character
     - TMPro.TMP_Dropdown/DropdownEvent
-    - TMPro.TMP_Dropdown/OptionData
     - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
@@ -360,6 +356,21 @@ ScriptsOnlyBuild:
     methodName: ActivateFullScreen
   - assembly: Assembly-CSharp
     fullTypeName: MenuOptions
+    methodName: ChangeResolution
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuOptions
+    methodName: SetSfxVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuOptions
+    methodName: SetMasterVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuOptions
+    methodName: ActivateFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuOptions
+    methodName: SetMusicVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuOptions
     methodName: SetMasterVolume
   - assembly: Assembly-CSharp
     fullTypeName: MenuOptions
@@ -369,13 +380,10 @@ ScriptsOnlyBuild:
     methodName: SetSfxVolume
   - assembly: Assembly-CSharp
     fullTypeName: MenuOptions
-    methodName: SetSfxVolume
+    methodName: ChangeResolution
   - assembly: Assembly-CSharp
     fullTypeName: MenuOptions
-    methodName: SetMasterVolume
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuOptions
-    methodName: SetMusicVolume
+    methodName: ActivateFullScreen
   sceneClasses:
     Assets/Scenes/Level1.unity:
     - Class: 1

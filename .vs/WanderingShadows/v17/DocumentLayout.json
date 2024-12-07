@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\sceneobjects\\scripts\\menuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\characters\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|c:\\users\\edu\\desktop\\programanding\\2do a\u00F1o\\mp13 projecte\\wanderingshadows\\assets\\sceneobjects\\scripts\\menuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\menuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,16 +19,8 @@
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|c:\\users\\edu\\desktop\\programanding\\2do a\u00F1o\\mp13 projecte\\wanderingshadows\\assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\sceneobjects\\scripts\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\characters\\samurai\\scripts\\samurai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\samurai\\scripts\\samurai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\characters\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\playerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\characters\\enemies\\scripts\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\characters\\enemies\\scripts\\enemybow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|c:\\users\\edu\\desktop\\programanding\\2do a\u00F1o\\mp13 projecte\\wanderingshadows\\assets\\game boy splash screen\\colorramp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\assets\\game boy splash screen\\colorramp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9958382-7FFD-B497-D5EE-79DA1AA7B335}|Assembly-CSharp.csproj|solutionrelative:assets\\game boy splash screen\\colorramp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,8 +90,7 @@
               "RelativeToolTip": "Assets\\Game Boy Splash Screen\\ColorRamp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T09:39:39.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T09:39:39.566Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "Assets\\Characters\\Enemies\\Scripts\\Arrow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T11:04:30.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-16T11:04:30.175Z"
             },
             {
               "$type": "Document",
@@ -132,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Samurai.cs",
               "DocumentMoniker": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
               "RelativeDocumentMoniker": "Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
@@ -140,12 +138,11 @@
               "RelativeToolTip": "Assets\\Characters\\Samurai\\Scripts\\Samurai.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAFkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T11:53:34.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T11:53:34.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "StartGame.cs",
               "DocumentMoniker": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\StartGame.cs",
               "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
@@ -153,12 +150,11 @@
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\StartGame.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAIwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T13:11:02.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T13:11:02.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MenuOptions.cs",
               "DocumentMoniker": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\MenuOptions.cs",
               "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\MenuOptions.cs",
@@ -179,18 +175,17 @@
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\CanvasOptions.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T10:44:19.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T10:44:19.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "PlayerScript.cs",
               "DocumentMoniker": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\Characters\\PlayerScript.cs",
               "RelativeDocumentMoniker": "Assets\\Characters\\PlayerScript.cs",
               "ToolTip": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\Characters\\PlayerScript.cs",
               "RelativeToolTip": "Assets\\Characters\\PlayerScript.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAuwHYAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAcwH0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T10:23:24.148Z",
               "EditorCaption": ""
@@ -217,18 +212,17 @@
               "RelativeToolTip": "Assets\\Characters\\Enemies\\Scripts\\EnemyBow.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T19:51:59.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T19:51:59.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameLogic.cs",
               "DocumentMoniker": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\GameLogic.cs",
               "RelativeDocumentMoniker": "Assets\\SceneObjects\\Scripts\\GameLogic.cs",
               "ToolTip": "C:\\Users\\Edu\\Desktop\\Programanding\\2do A\u00F1o\\MP13 Projecte\\WanderingShadows\\Assets\\SceneObjects\\Scripts\\GameLogic.cs",
               "RelativeToolTip": "Assets\\SceneObjects\\Scripts\\GameLogic.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwB8AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwCwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T08:04:26.253Z",
               "EditorCaption": ""
